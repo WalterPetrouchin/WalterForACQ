@@ -1,1 +1,215 @@
-Hi :)
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walter Petrouchin | Strategy Associate Application for Acquisition.com</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for styling and animations -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        .section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 2rem;
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .highlight-text {
+            background: -webkit-linear-gradient(45deg, #0ea5e9, #8b5cf6); /* sky-500 to violet-500 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .modal {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .modal-content {
+            transition: transform 0.3s ease;
+        }
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
+                <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
+                <a href="/deliverables.html" class="hover:text-sky-500 transition-colors">Deliverable Examples</a>
+                <a href="/fit.html" class="hover:text-sky-500 transition-colors">Culture Fit</a>
+                <a href="/responses.html" class="hover:text-sky-500 transition-colors">Application Responses</a>
+                <a href="/goals.html" class="hover:text-sky-500 transition-colors">Goals</a>
+                <a href="/fun.html" class="hover:text-sky-500 transition-colors">Beyond Work</a>
+                <a href="/thankyou.html" class="hover:text-sky-500 transition-colors">Thank You</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-slate-800 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
+        <button id="mobile-menu-close-button" class="absolute top-6 right-6 text-slate-800 focus:outline-none">
+             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+        <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
+        <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
+        <a href="/deliverables.html" class="text-2xl font-semibold text-slate-800">Deliverables</a>
+        <a href="/fit.html" class="text-2xl font-semibold text-slate-800">Culture Fit</a>
+        <a href="/responses.html" class="text-2xl font-semibold text-slate-800">Responses</a>
+        <a href="/goals.html" class="text-2xl font-semibold text-slate-800">Goals</a>
+        <a href="/fun.html" class="text-2xl font-semibold text-slate-800">Beyond Work</a>
+        <a href="/thankyou.html" class="text-2xl font-semibold text-slate-800">Thank You</a>
+    </div>
+
+
+    <!-- Section 1: The Hook (This remains your homepage content) -->
+    <section id="hook" class="section flex-col relative overflow-hidden">
+        <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-50"></div>
+        <div class="text-center z-10 fade-in">
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight text-slate-900">
+                Building the Future of <span class="highlight-text">Acquisition.com</span>
+            </h1>
+            <p class="mt-6 max-w-2xl mx-auto text-lg md:text-xl text-slate-600">
+                An interactive application for the Strategy Associate role.
+            </p>
+            <p class="mt-2 text-sm text-slate-500">By Walter Petrouchin</p>
+        </div>
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
+             <div class="flex flex-col items-center text-slate-500">
+                <span class="text-xs">Explore The Site</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-1 scroll-indicator" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTE: The rest of the sections (Why, How, Vision, Contact) would now live on their own separate HTML pages. -->
+    <!-- This file now serves as your main "index.html" homepage. -->
+
+    <!-- Modals for Case Studies (If you choose to keep them on the homepage) -->
+    <!-- ... modal HTML ... -->
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        // --- Header Scroll Effect ---
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('glass-effect', 'shadow-lg');
+            } else {
+                header.classList.remove('glass-effect', 'shadow-lg');
+            }
+        });
+
+        // --- Fade-in on Scroll Animation ---
+        const faders = document.querySelectorAll('.fade-in');
+        const appearOptions = {
+            threshold: 0.3,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    return;
+                } else {
+                    entry.target.classList.add('visible');
+                    appearOnScroll.unobserve(entry.target);
+                }
+            });
+        }, appearOptions);
+
+        faders.forEach(fader => {
+            appearOnScroll.observe(fader);
+        });
+        
+        // --- Mobile Menu Logic ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuCloseButton.addEventListener('click', () => {
+            mobileMenu.classList.add('opacity-0');
+             setTimeout(() => {
+                mobileMenu.classList.add('pointer-events-none');
+                document.body.style.overflow = 'auto';
+            }, 300); // Match transition duration
+        });
+
+        // Optional: Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('opacity-0');
+                setTimeout(() => {
+                    mobileMenu.classList.add('pointer-events-none');
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            });
+        });
+
+    </script>
+</body>
+</html>
