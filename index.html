@@ -27,6 +27,12 @@
             justify-content: center;
             padding: 8rem 2rem;
         }
+        /* New class for more compact sections */
+        .section-compact {
+            min-height: auto;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
         .glass-effect {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -61,11 +67,14 @@
             opacity: 1;
             transform: translateY(0);
         }
-        .modal {
-            transition: opacity 0.3s ease, transform 0.3s ease;
+        .memo-grid {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 0.5rem 1rem;
         }
-        .modal-content {
-            transition: transform 0.3s ease;
+        .memo-label {
+            font-weight: 600;
+            color: #64748b; /* slate-500 */
         }
         /* Mobile Menu Transition */
         #mobile-menu {
@@ -105,7 +114,6 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
-        <!-- 'X' button has been removed -->
         <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
         <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
         <a href="/deliverables.html" class="text-2xl font-semibold text-slate-800">Deliverables</a>
@@ -117,29 +125,78 @@
     </div>
 
 
-    <!-- Section 1: The Hook (This remains your homepage content) -->
+    <!-- Section 1: The Hook -->
     <section id="hook" class="section flex-col relative overflow-hidden">
         <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
         <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-50"></div>
         <div class="text-center z-10 fade-in">
             <h1 class="font-extrabold tracking-tight text-slate-900">
-                <span class="block text-xl md:text-2xl lg:text-3xl font-medium text-slate-600">An application for the Strategy Associate role at</span>
+                <span class="block text-xl md:text-2xl lg:text-3xl font-medium text-slate-600">
+                    An application for the 
+                    <a href="https://jobs.ashbyhq.com/acquisition/1a34c48f-ded8-4c8c-af08-2e638c7d9a26" target="_blank" rel="noopener noreferrer" class="font-semibold text-slate-800 hover:text-sky-500 transition-colors underline decoration-slate-300 hover:decoration-sky-500 underline-offset-4">Strategy Associate</a>
+                    role at
+                </span>
                 <span class="block mt-2 text-5xl md:text-7xl lg:text-8xl highlight-text">Acquisition.com</span>
             </h1>
             <p class="mt-8 text-sm text-slate-500">By Walter Petrouchin</p>
         </div>
         <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10">
-             <div class="flex flex-col items-center text-slate-500">
-                <span class="text-xs">Explore The Site</span>
+             <a href="#video" class="flex flex-col items-center text-slate-500 hover:text-slate-900 transition-colors">
+                <span class="text-xs">Get to know me</span>
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mt-1 scroll-indicator" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Section 2: Video Introduction -->
+    <section id="video" class="section section-compact bg-white">
+        <div class="container mx-auto px-6 text-center fade-in">
+            <div class="mb-12">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-sky-500">Introduction</h2>
+                <p class="mt-3 text-3xl md:text-4xl font-bold text-slate-900">A 60-Second Overview</p>
+                <p class="mt-4 max-w-2xl mx-auto text-slate-600">Most people send a resume. I wanted to build you a deliverable instead.</p>
+            </div>
+            <div class="max-w-4xl mx-auto">
+                <div class="aspect-w-16 aspect-h-9 bg-slate-200 rounded-xl overflow-hidden shadow-2xl shadow-slate-900/10 border border-slate-200">
+                     <!-- In a real scenario, you would replace this with your actual video embed code from YouTube, Vimeo, or Loom -->
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        class="w-full h-full"
+                        title="Placeholder Video">
+                    </iframe>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- NOTE: The rest of the sections (Why, How, Vision, Contact) would now live on their own separate HTML pages. -->
-    <!-- This file now serves as your main "index.html" homepage. -->
+    <!-- Section 3: The Memo -->
+    <section id="memo" class="section section-compact">
+        <div class="container mx-auto px-6 fade-in">
+            <div class="text-center mb-12">
+                <h2 class="text-sm font-bold uppercase tracking-widest text-sky-500">My Approach</h2>
+                <p class="mt-3 text-3xl md:text-4xl font-bold text-slate-900">My First Deliverable To You</p>
+                <p class="mt-4 max-w-2xl mx-auto text-slate-600">This site is a live demonstration of the clarity, quality, and initiative I bring to my work. Below is a summary of my proposal.</p>
+            </div>
+            <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl shadow-slate-900/10 border border-slate-200">
+                <div class="memo-grid items-center mb-6 text-sm md:text-base">
+                    <p class="memo-label">TO:</p><p class="text-slate-800">Acquisition.com Hiring Team</p>
+                    <p class="memo-label">FROM:</p><p class="text-slate-800">Walter Petrouchin</p>
+                    <p class="memo-label">DATE:</p><p class="text-slate-800">August 19, 2025</p>
+                    <p class="memo-label">SUBJECT:</p><p class="font-semibold text-slate-900">Proposal & Analysis: Your Next Strategy Associate</p>
+                </div>
+                <hr class="border-slate-200 my-8">
+                <div class="prose prose-slate max-w-none text-slate-600">
+                    <p>This document presents the case for my candidacy as the optimal choice for the Strategy Associate role. The following analysis demonstrates a direct alignment with Acquisition.com's core values, a proven capacity to deliver against the role's required results, and the tangible skills in framework development and data analysis necessary to create immediate impact.</p>
+                    <p>I don't just analyze markets; I identify untapped opportunities and build actionable roadmaps. I am confident in my ability to contribute meaningfully from day one, helping to source, diligence, and grow the next wave of portfolio companies.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- JavaScript for interactivity -->
     <script>
@@ -160,7 +217,7 @@
             // --- Fade-in on Scroll Animation ---
             const faders = document.querySelectorAll('.fade-in');
             const appearOptions = {
-                threshold: 0.3,
+                threshold: 0.2,
                 rootMargin: "0px 0px -50px 0px"
             };
             const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
