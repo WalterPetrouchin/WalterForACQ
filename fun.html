@@ -26,7 +26,6 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        /* Mobile Menu Transition */
         #mobile-menu {
             transition: opacity 0.3s ease-in-out;
         }
@@ -35,23 +34,24 @@
         .mosaic-container {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem; /* space between stacked images */
+            gap: 1.5rem;
         }
         .photo-card {
             position: relative;
             width: 100%;
-            height: 300px; /* Consistent height on mobile */
+            height: 300px;
             overflow: hidden;
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             border: 4px solid white;
+            cursor: pointer;
         }
         .photo-card:hover {
-            transform: scale(1.03); /* Subtle zoom on mobile */
+            transform: scale(1.03);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
-        .photo-card img {
+        .photo-card img, .photo-card video {
             width: 100%;
             height: 100%;
             object-fit: cover;
@@ -64,25 +64,40 @@
             background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
             color: white;
             padding: 2rem 1rem 1rem;
-            /* UPDATED: Visible by default for mobile */
             opacity: 1;
             transform: translateY(0);
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
+        .play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 64px;
+            height: 64px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 9999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease;
+        }
+        .play-icon.hidden {
+            opacity: 0;
+        }
 
         /* --- DESKTOP OVERRIDES --- */
-        /* Targets screens larger than mobile (768px and up) */
         @media (min-width: 769px) {
             .mosaic-container {
                 position: relative;
-                display: block; /* Revert from flex to block */
+                display: block;
                 width: 100%;
                 height: 80vh;
                 min-height: 700px;
             }
             .photo-card {
                 position: absolute;
-                height: auto; /* Revert from fixed height */
+                height: auto;
             }
             #photo-1 { top: 0%; left: 10%; width: 30%; height: 45%; transform: rotate(-3deg); }
             #photo-2 { top: 50%; left: 5%; width: 40%; height: 45%; transform: rotate(2deg); }
@@ -91,17 +106,14 @@
             #photo-5 { top: 40%; left: 72%; width: 28%; height: 50%; transform: rotate(8deg); }
             
             .photo-card:hover {
-                transform: scale(1.1) rotate(0deg) !important; /* Enlarge and straighten on hover */
-                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+                transform: scale(1.1) rotate(0deg) !important;
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
                 z-index: 10;
             }
-
-            /* UPDATED: Hide description by default on desktop */
             .photo-description {
                 opacity: 0;
                 transform: translateY(20px);
             }
-            /* UPDATED: Show description on hover on desktop */
             .photo-card:hover .photo-description {
                 opacity: 1;
                 transform: translateY(0);
@@ -115,8 +127,6 @@
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
-            
-            <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
                 <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
                 <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
@@ -127,13 +137,9 @@
                 <a href="/fun.html" class="text-sky-500 font-semibold transition-colors">Beyond Work</a>
                 <a href="/thankyou.html" class="hover:text-sky-500 transition-colors">Thank You</a>
             </nav>
-
-            <!-- Mobile Menu Button -->
             <div class="lg:hidden">
                 <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
@@ -158,7 +164,7 @@
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">Beyond the Resume</h1>
                 <p class="mt-4 text-lg text-slate-600">
-                   A few snapshots from my life outside of work that capture my passions for sports, travel, and continuous learning. Hover over any image to learn more.
+                   A few snapshots from my life outside of work that capture my passions for sports, travel, and continuous learning. Hover over any image to learn more (or click to play).
                 </p>
             </div>
         </section>
@@ -169,42 +175,48 @@
                 <div class="mosaic-container">
                     <!-- Image 1 -->
                     <div id="photo-1" class="photo-card">
-                        <img src="https://placehold.co/800x600/e2e8f0/334155?text=Basketball" alt="Placeholder Image 1">
+                        <img src="https://drive.google.com/uc?export=view&id=1xQcjzsyqbs1VPtwf3YWE8lPv1Yan_DSc" alt="Walter playing basketball">
                         <div class="photo-description">
-                            <h3 class="font-bold text-lg">Placeholder Title 1</h3>
-                            <p class="text-sm">Placeholder description for the first image.</p>
+                            <h3 class="font-bold text-lg">Competitive Drive</h3>
+                            <p class="text-sm">Applying the same focus and competitive drive from the basketball court to every business challenge.</p>
                         </div>
                     </div>
                     <!-- Image 2 -->
                     <div id="photo-2" class="photo-card">
-                        <img src="https://placehold.co/600x800/e2e8f0/334155?text=Travel" alt="Placeholder Image 2">
+                        <img src="https://drive.google.com/uc?export=view&id=13kR44L5pH0IuEQ1TAGn-_4VQzr_H4Ol9" alt="Walter traveling">
                         <div class="photo-description">
-                            <h3 class="font-bold text-lg">Placeholder Title 2</h3>
-                            <p class="text-sm">Placeholder description.</p>
+                            <h3 class="font-bold text-lg">Exploring New Perspectives</h3>
+                            <p class="text-sm">Travel has taught me to adapt quickly and appreciate different ways of thinking—a crucial skill in strategy.</p>
                         </div>
                     </div>
-                    <!-- Image 3 -->
+                    <!-- Video 3 -->
                     <div id="photo-3" class="photo-card">
-                        <img src="https://placehold.co/800x1000/e2e8f0/334155?text=Reading" alt="Placeholder Image 3">
+                        <video id="reading-video" class="w-full h-full object-cover" loop preload="metadata">
+                            <source src="https://drive.google.com/uc?export=view&id=18f5QKGQq3XqKlEab9xr6yBBaiF8NqrYe" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <div id="play-icon-container" class="play-icon">
+                            <svg class="w-8 h-8 text-slate-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                        </div>
                         <div class="photo-description">
-                            <h3 class="font-bold text-lg">Placeholder Title 3</h3>
-                            <p class="text-sm">Placeholder description.</p>
+                            <h3 class="font-bold text-lg">Continuous Learning</h3>
+                            <p class="text-sm">My passion for reading and self-improvement is relentless. I believe the best investment is always in your own knowledge.</p>
                         </div>
                     </div>
                     <!-- Image 4 -->
                     <div id="photo-4" class="photo-card">
-                        <img src="https://placehold.co/400x600/e2e8f0/334155?text=Outdoors" alt="Placeholder Image 4">
+                        <img src="https://drive.google.com/uc?export=view&id=1mLKEeJ2BTMx2mGaWvOvFDHyMPY1NiGJk" alt="Walter outdoors">
                         <div class="photo-description">
-                            <h3 class="font-bold text-lg">Placeholder Title 4</h3>
-                            <p class="text-sm">Placeholder description.</p>
+                            <h3 class="font-bold text-lg">Embracing Challenges</h3>
+                            <p class="text-sm">Whether it's a mountain or a market analysis, I thrive on pushing my limits and tackling difficult challenges head-on.</p>
                         </div>
                     </div>
                     <!-- Image 5 -->
                     <div id="photo-5" class="photo-card">
-                        <img src="https://placehold.co/1000x600/e2e8f0/334155?text=Yoga" alt="Placeholder Image 5">
+                        <img src="https://drive.google.com/uc?export=view&id=15JXvb87jtDIin3KESneeuJeqM_i-aTs_" alt="Walter doing yoga">
                         <div class="photo-description">
-                            <h3 class="font-bold text-lg">Placeholder Title 5</h3>
-                            <p class="text-sm">Placeholder description.</p>
+                            <h3 class="font-bold text-lg">Discipline & Focus</h3>
+                            <p class="text-sm">Practices like yoga and martial arts have honed my discipline and ability to maintain focus under pressure.</p>
                         </div>
                     </div>
                 </div>
@@ -220,8 +232,6 @@
             // --- Mobile Menu Logic ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
             const toggleMobileMenu = () => {
                 const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
                 if (isMenuOpen) {
@@ -235,16 +245,30 @@
                     document.body.style.overflow = 'hidden';
                 }
             };
-
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', toggleMobileMenu);
-                mobileMenuLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
-                mobileMenu.addEventListener('click', (event) => {
-                    if (event.target === mobileMenu) toggleMobileMenu();
-                });
+                mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', toggleMobileMenu));
+                mobileMenu.addEventListener('click', (event) => { if (event.target === mobileMenu) toggleMobileMenu(); });
                 window.addEventListener('keydown', (e) => {
                     const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
                     if (e.key === 'Escape' && isMenuOpen) toggleMobileMenu();
+                });
+            }
+
+            // --- Video Player Logic ---
+            const videoCard = document.getElementById('photo-3');
+            const video = document.getElementById('reading-video');
+            const playIcon = document.getElementById('play-icon-container');
+
+            if(videoCard && video && playIcon) {
+                videoCard.addEventListener('click', () => {
+                    if (video.paused) {
+                        video.play();
+                        playIcon.classList.add('hidden');
+                    } else {
+                        video.pause();
+                        playIcon.classList.remove('hidden');
+                    }
                 });
             }
         });
