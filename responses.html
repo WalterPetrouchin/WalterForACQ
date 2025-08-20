@@ -1,1 +1,209 @@
-These are my direct answers to the application questions :)
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Responses | Walter Petrouchin</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for styling and animations -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* Accordion Styles */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out;
+        }
+        .accordion-item.active .accordion-content {
+            max-height: 500px; /* Adjust as needed for content */
+            padding-top: 1rem;
+            padding-bottom: 1.5rem;
+        }
+        .accordion-item .icon {
+            transition: transform 0.3s ease-in-out;
+        }
+        .accordion-item.active .icon {
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
+                <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
+                <a href="/deliverables.html" class="hover:text-sky-500 transition-colors">Deliverable Examples</a>
+                <a href="/fit.html" class="hover:text-sky-500 transition-colors">Culture Fit</a>
+                <a href="/responses.html" class="text-sky-500 font-semibold transition-colors">Application Responses</a>
+                <a href="/goals.html" class="hover:text-sky-500 transition-colors">Goals</a>
+                <a href="/fun.html" class="hover:text-sky-500 transition-colors">Beyond Work</a>
+                <a href="/thankyou.html" class="hover:text-sky-500 transition-colors">Thank You</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0- 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
+        <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
+        <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
+        <a href="/deliverables.html" class="text-2xl font-semibold text-slate-800">Deliverables</a>
+        <a href="/fit.html" class="text-2xl font-semibold text-slate-800">Culture Fit</a>
+        <a href="/responses.html" class="text-2xl font-semibold text-sky-500">Responses</a>
+        <a href="/goals.html" class="text-2xl font-semibold text-slate-800">Goals</a>
+        <a href="/fun.html" class="text-2xl font-semibold text-slate-800">Beyond Work</a>
+        <a href="/thankyou.html" class="text-2xl font-semibold text-slate-800">Thank You</a>
+    </div>
+
+
+    <!-- Main Content Section -->
+    <main class="pt-32 pb-16">
+        <section id="intro" class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
+                    <a href="https://jobs.ashbyhq.com/acquisition/1a34c48f-ded8-4c8c-af08-2e638c7d9a26/application" target="_blank" rel="noopener noreferrer" class="hover:text-sky-500 transition-colors underline decoration-slate-300 hover:decoration-sky-500 underline-offset-4 decoration-2">
+                        Application
+                    </a> Responses
+                </h1>
+                <p class="mt-4 text-lg text-slate-600">
+                    Detailed answers to the questions from the application form. Click on any question to expand the response.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Accordion Section -->
+        <section id="accordion-section" class="container mx-auto px-6 pt-24 pb-16">
+            <div class="max-w-3xl mx-auto">
+                <!-- Group 1: Basic Information -->
+                <h2 class="text-2xl font-bold text-slate-800 mb-6">Basic & Logistical Information</h2>
+                <div class="space-y-4 mb-12">
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Full Name (First, Last)</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #1</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Email Address</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #2</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Phone Number</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #3</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Location (City, State)</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #4</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Please provide a link to your social media account.</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #5</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Portfolio / Website (if applicable)</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #6</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Resume</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #7</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">How did you hear about this opportunity?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #8</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you currently authorized to work in the U.S. without sponsorship?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #9</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Will you now or in the future require sponsorship for employment?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #10</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you open to relocating to Las Vegas?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #11</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">If you were to receive an offer, how many weeks do you need before you can start?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #12</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Would full focus and commitment pose any issue for you?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #13</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Any vacations coming up in the next 3 months?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #14</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">What compensation range are you targeting in your first year?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #15</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you able to commit to the intensive workshop schedule?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #16</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you currently involved in any other interview processes?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #17</p></div></div></div>
+                </div>
+
+                <!-- Group 2: Experience & Fit -->
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 mt-12">Experience & Role Fit</h2>
+                <div class="space-y-4 mb-12">
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Have you worked cross-functionally to solve business problems?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #18</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Have you presented recommendations directly to senior stakeholders?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #19</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Do you have 1+ years of experience in Sales, Marketing, Strategy, Operations, or Customer Success?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #20</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you comfortable doing work such as note-taking, slide clean-up, and documentation?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #21</p></div></div></div>
+                </div>
+
+                <!-- Group 3: Situational Questions -->
+                <h2 class="text-2xl font-bold text-slate-800 mb-6 mt-12">Situational Questions</h2>
+                <div class="space-y-4">
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Tell us about a time you improved a business process or result.</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #22</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Share an example of a deck, memo, or analysis that simplified a complex topic.</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #23</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Share a link to a short video introducing yourself.</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Placeholder Answer #24</p></div></div></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Accordion Logic ---
+            const accordionItems = document.querySelectorAll('.accordion-item');
+            accordionItems.forEach(item => {
+                const header = item.querySelector('.accordion-header');
+                header.addEventListener('click', () => {
+                    // Close other items
+                    accordionItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+            const toggleMobileMenu = () => {
+                const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
+                if (isMenuOpen) {
+                    mobileMenu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('pointer-events-none');
+                        document.body.style.overflow = 'auto';
+                    }, 300);
+                } else {
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', toggleMobileMenu);
+                mobileMenuLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+                mobileMenu.addEventListener('click', (event) => {
+                    if (event.target === mobileMenu) toggleMobileMenu();
+                });
+                window.addEventListener('keydown', (e) => {
+                    const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
+                    if (e.key === 'Escape' && isMenuOpen) toggleMobileMenu();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
