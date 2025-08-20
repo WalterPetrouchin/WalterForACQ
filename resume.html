@@ -11,7 +11,7 @@
     <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display.swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Custom CSS for styling and animations -->
     <style>
@@ -25,20 +25,6 @@
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.05);
-        }
-        .highlight-text {
-            background: -webkit-linear-gradient(45deg, #0ea5e9, #8b5cf6); /* sky-500 to violet-500 */
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
         }
         /* Mobile Menu Transition */
         #mobile-menu {
@@ -90,7 +76,7 @@
 
 
     <!-- Main Content Section -->
-    <main class="pt-32 pb-16">
+    <main class="pt-32 pb-16 min-h-screen flex items-center">
         <section id="resume-content" class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">My Resume & Story</h1>
@@ -110,7 +96,7 @@
                     </a>
                     
                     <!-- Button 2: View Story Deck -->
-                    <a href="https://docs.google.com/presentation/d/12345abcdef/edit?usp=sharing" 
+                    <a href="https://docs.google.com/presentation/d/1butZy3Ip3-ysBl2Iwek6O41x-MPgggivEE5vcmwzvjg/edit?usp=sharing" 
                        target="_blank" 
                        rel="noopener noreferrer"
                        class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-slate-200 text-slate-800 font-semibold py-3 px-8 rounded-lg hover:bg-slate-300 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1">
@@ -122,121 +108,13 @@
                 </div>
             </div>
         </section>
-        
-        <!-- UPDATED SECTION: Narrative Timeline -->
-        <section id="timeline" class="bg-white border-y border-slate-200">
-            <div class="container mx-auto px-6 py-24">
-                <div class="max-w-4xl mx-auto">
-                    <div class="text-center mb-20">
-                         <h2 class="text-3xl md:text-4xl font-bold text-slate-900">My Journey & How It Applies</h2>
-                         <p class="mt-4 max-w-2xl mx-auto text-slate-600">My path has been unconventional but intentional, providing me with a unique blend of analytical, legal, and entrepreneurial skills directly applicable to the Strategy Associate role.</p>
-                    </div>
-
-                    <!-- Timeline Container -->
-                    <div class="relative">
-                        <!-- Vertical Line -->
-                        <div class="absolute left-4 md:left-1/2 w-0.5 h-full bg-slate-200" aria-hidden="true"></div>
-
-                        <!-- Timeline Item 1: Entrepreneurial Roots -->
-                        <div class="relative mb-12">
-                            <div class="md:flex items-center">
-                                <div class="md:w-1/2 md:pr-8">
-                                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-md">
-                                        <div class="flex items-center gap-x-4 mb-3">
-                                            <div class="flex-shrink-0 h-12 w-12 rounded-lg bg-white flex items-center justify-center ring-1 ring-slate-200">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
-                                            </div>
-                                            <h3 class="text-xl font-bold text-slate-800">Entrepreneurial Foundations</h3>
-                                        </div>
-                                        <p class="text-slate-600">I grew up in my family's windows and doors business. I was demonstrating products at trade shows at age 6 and drafting client emails for <span class="font-bold text-2xl text-slate-800">$100k+</span> deals by age 10. This wasn't just a job; it was a masterclass in business operations.</p>
-                                        <p class="mt-3 text-sm font-semibold text-sky-600">Relevance: This embedded a deep, intuitive understanding of client management, high-stakes communication, and the relentless work ethic required to drive results—core traits for any strategy role.</p>
-                                    </div>
-                                </div>
-                                <div class="hidden md:block w-1/2"></div>
-                            </div>
-                            <div class="absolute left-4 md:left-1/2 top-4 -ml-2 h-4 w-4 rounded-full bg-sky-500 ring-8 ring-white"></div>
-                        </div>
-
-                        <!-- Timeline Item 2: Education -->
-                        <div class="relative mb-12">
-                            <div class="md:flex items-center md:flex-row-reverse">
-                                <div class="md:w-1/2 md:pl-8">
-                                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-md">
-                                        <div class="flex items-center gap-x-4 mb-3">
-                                            <div class="flex-shrink-0 h-12 w-12 rounded-lg bg-white flex items-center justify-center ring-1 ring-slate-200">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-9.998 12.078 12.078 0 01.665-6.479L12 14z" /><path stroke-linecap="round" stroke-linejoin="round" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-9.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222 4 2.222V20" /></svg>
-                                            </div>
-                                            <h3 class="text-xl font-bold text-slate-800">Accelerated Education</h3>
-                                        </div>
-                                        <p class="text-slate-600">I graduated from USC in <span class="font-bold text-2xl text-slate-800">3</span> years with a <span class="font-bold text-2xl text-slate-800">3.9</span> GPA in Accounting & Computer Science. After earning a C on my first programming exam, I doubled down, mastering the material to become a TA for the same course a semester later.</p>
-                                        <p class="mt-3 text-sm font-semibold text-sky-600">Relevance: This demonstrates resilience and an aggressive learning curve. The combination of accounting (the language of business) and programming (the language of logic) provides a powerful analytical foundation.</p>
-                                    </div>
-                                </div>
-                                <div class="hidden md:block w-1/2"></div>
-                            </div>
-                            <div class="absolute left-4 md:left-1/2 top-4 -ml-2 h-4 w-4 rounded-full bg-sky-500 ring-8 ring-white"></div>
-                        </div>
-
-                        <!-- Timeline Item 3: Law School -->
-                        <div class="relative mb-12">
-                            <div class="md:flex items-center">
-                                <div class="md:w-1/2 md:pr-8">
-                                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-md">
-                                        <div class="flex items-center gap-x-4 mb-3">
-                                            <div class="flex-shrink-0 h-12 w-12 rounded-lg bg-white flex items-center justify-center ring-1 ring-slate-200">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2h8a2 2 0 002-2v-1a2 2 0 012-2h1.945M7.881 4.002l.07-.06a2 2 0 012.828 0l2.072 2.072a2 2 0 002.828 0l2.072-2.072a2 2 0 012.828 0l.07.06M12 21.75V12" /></svg>
-                                            </div>
-                                            <h3 class="text-xl font-bold text-slate-800">Legal & Analytical Acumen</h3>
-                                        </div>
-                                        <p class="text-slate-600">Inspired by defending my family's business in a <span class="font-bold text-2xl text-slate-800">$9,999</span> lawsuit at age 18, I pursued a JD to master high-stakes communication. This experience, combined with a <span class="font-bold text-2xl text-slate-800">740</span> GMAT score, honed my ability to perform quick, accurate, back-of-the-napkin analysis under pressure.</p>
-                                        <p class="mt-3 text-sm font-semibold text-sky-600">Relevance: Law school provides a rigorous framework for structured thinking and persuasive communication—essential for creating compelling memos and strategic recommendations for portfolio companies.</p>
-                                    </div>
-                                </div>
-                                <div class="hidden md:block w-1/2"></div>
-                            </div>
-                            <div class="absolute left-4 md:left-1/2 top-4 -ml-2 h-4 w-4 rounded-full bg-sky-500 ring-8 ring-white"></div>
-                        </div>
-                        
-                        <!-- Timeline Item 4: Leadership -->
-                        <div class="relative mb-12">
-                            <div class="md:flex items-center md:flex-row-reverse">
-                                <div class="md:w-1/2 md:pl-8">
-                                    <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-md">
-                                        <div class="flex items-center gap-x-4 mb-3">
-                                            <div class="flex-shrink-0 h-12 w-12 rounded-lg bg-white flex items-center justify-center ring-1 ring-slate-200">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-sky-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.653-.125-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.653.125-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                            </div>
-                                            <h3 class="text-xl font-bold text-slate-800">Proactive Leadership</h3>
-                                        </div>
-                                        <p class="text-slate-600">At every opportunity, I ran for and secured leadership positions. As President of the First Generation Professionals, I increased organizational funding by <span class="font-bold text-2xl text-slate-800">300%</span>, from $3k to $12k per semester, by identifying new funding sources and building consensus for strategic initiatives.</p>
-                                        <p class="mt-3 text-sm font-semibold text-sky-600">Relevance: This demonstrates a consistent pattern of taking initiative, owning outcomes, and creating value beyond the scope of a defined role—key indicators of a future leader.</p>
-                                    </div>
-                                </div>
-                                <div class="hidden md:block w-1/2"></div>
-                            </div>
-                            <div class="absolute left-4 md:left-1/2 top-4 -ml-2 h-4 w-4 rounded-full bg-sky-500 ring-8 ring-white"></div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
     </main>
 
     <!-- JavaScript for interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // --- Header Scroll Effect ---
-            const header = document.getElementById('main-header');
-            if (header) {
-                // The resume page header is always visible with the glass effect
-                // so no scroll listener is needed here, but keeping the logic
-                // in case you want to change it back.
-            }
-
-            // --- Mobile Menu Logic (Simplified) ---
+            // --- Mobile Menu Logic ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
             const mobileMenuLinks = mobileMenu.querySelectorAll('a');
