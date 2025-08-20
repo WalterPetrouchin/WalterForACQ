@@ -31,7 +31,7 @@
             transition: opacity 0.3s ease-in-out;
         }
         
-        /* --- NEW MOBILE-FIRST MOSAIC STYLES --- */
+        /* --- MOBILE-FIRST MOSAIC STYLES --- */
         .mosaic-container {
             display: flex;
             flex-direction: column;
@@ -64,13 +64,10 @@
             background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
             color: white;
             padding: 2rem 1rem 1rem;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-        }
-        .photo-card:hover .photo-description {
+            /* UPDATED: Visible by default for mobile */
             opacity: 1;
             transform: translateY(0);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
 
         /* --- DESKTOP OVERRIDES --- */
@@ -94,9 +91,20 @@
             #photo-5 { top: 40%; left: 72%; width: 28%; height: 50%; transform: rotate(8deg); }
             
             .photo-card:hover {
-                transform: scale(1.1) rotate(0deg); /* Enlarge and straighten on hover */
+                transform: scale(1.1) rotate(0deg) !important; /* Enlarge and straighten on hover */
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
                 z-index: 10;
+            }
+
+            /* UPDATED: Hide description by default on desktop */
+            .photo-description {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            /* UPDATED: Show description on hover on desktop */
+            .photo-card:hover .photo-description {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
     </style>
