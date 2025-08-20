@@ -1,1 +1,173 @@
-This is my goals page :)
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goals | Walter Petrouchin</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for styling and animations -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
+                <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
+                <a href="/deliverables.html" class="hover:text-sky-500 transition-colors">Deliverable Examples</a>
+                <a href="/fit.html" class="hover:text-sky-500 transition-colors">Culture Fit</a>
+                <a href="/responses.html" class="hover:text-sky-500 transition-colors">Application Responses</a>
+                <a href="/goals.html" class="text-sky-500 font-semibold transition-colors">Goals</a>
+                <a href="/fun.html" class="hover:text-sky-500 transition-colors">Beyond Work</a>
+                <a href="/thankyou.html" class="hover:text-sky-500 transition-colors">Thank You</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
+        <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
+        <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
+        <a href="/deliverables.html" class="text-2xl font-semibold text-slate-800">Deliverables</a>
+        <a href="/fit.html" class="text-2xl font-semibold text-slate-800">Culture Fit</a>
+        <a href="/responses.html" class="text-2xl font-semibold text-slate-800">Responses</a>
+        <a href="/goals.html" class="text-2xl font-semibold text-sky-500">Goals</a>
+        <a href="/fun.html" class="text-2xl font-semibold text-slate-800">Beyond Work</a>
+        <a href="/thankyou.html" class="text-2xl font-semibold text-slate-800">Thank You</a>
+    </div>
+
+
+    <!-- Main Content Section -->
+    <main class="pt-32 pb-16">
+        <section id="intro" class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">My Goals & Aspirations</h1>
+                <p class="mt-4 text-lg text-slate-600">
+                   I am driven by a desire for continuous growth and impact. Here is a look at what I aim to achieve, both in the near future with your team and in my long-term career.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Short-Term Goals Section -->
+        <section id="short-term-goals" class="container mx-auto px-6 pt-24 pb-16">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">My First 90 Days</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-slate-600">Assuming I earn the role, here is how I plan to approach my first three months to create immediate value.</p>
+                </div>
+                <div class="grid md:grid-cols-1 lg:grid-cols-3 gap-8 text-center">
+                    <!-- 30 Days -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
+                        <div class="text-sky-500 font-bold text-lg">First 30 Days</div>
+                        <h3 class="text-2xl font-semibold mt-2 text-slate-800">Placeholder</h3>
+                        <p class="text-slate-600 mt-4">X</p>
+                    </div>
+                    <!-- 60 Days -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200 transform lg:scale-105 lg:shadow-2xl">
+                        <div class="text-sky-500 font-bold text-lg">First 60 Days</div>
+                        <h3 class="text-2xl font-semibold mt-2 text-slate-800">Placeholder</h3>
+                        <p class="text-slate-600 mt-4">X</p>
+                    </div>
+                    <!-- 90 Days -->
+                    <div class="bg-white p-8 rounded-xl shadow-lg border border-slate-200">
+                        <div class="text-sky-500 font-bold text-lg">First 90 Days</div>
+                        <h3 class="text-2xl font-semibold mt-2 text-slate-800">Placeholder</h3>
+                        <p class="text-slate-600 mt-4">X</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Long-Term Goals Section -->
+        <section id="long-term-goals" class="bg-white border-y border-slate-200">
+            <div class="container mx-auto px-6 py-24">
+                <div class="max-w-3xl mx-auto text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Long-Term Aspirations</h2>
+                    <p class="mt-4 text-slate-600">Beyond the first 90 days, my ambitions are focused on deep expertise and entrepreneurial growth.</p>
+                    <div class="mt-8 text-left space-y-4 text-slate-600 bg-slate-50 p-8 rounded-xl border border-slate-200">
+                        <p><strong>Placeholder:</strong> X</p>
+                        <p><strong>Placeholder:</strong> X</p>
+                        <p><strong>Placeholder:</strong> X</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+            const toggleMobileMenu = () => {
+                const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
+                if (isMenuOpen) {
+                    mobileMenu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('pointer-events-none');
+                        document.body.style.overflow = 'auto';
+                    }, 300);
+                } else {
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', toggleMobileMenu);
+                mobileMenuLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+                mobileMenu.addEventListener('click', (event) => {
+                    if (event.target === mobileMenu) toggleMobileMenu();
+                });
+                window.addEventListener('keydown', (e) => {
+                    const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
+                    if (e.key === 'Escape' && isMenuOpen) toggleMobileMenu();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
