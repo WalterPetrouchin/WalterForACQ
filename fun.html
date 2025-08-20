@@ -1,1 +1,219 @@
-This is my fun stuff page - things I'm into outside of career :)
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beyond Work | Walter Petrouchin</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for styling and animations -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out;
+        }
+        /* Photo collage styles */
+        .photo-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+        }
+        .photo-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .photo-description {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+            color: white;
+            padding: 2rem 1rem 1rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        /* UPDATED: More dynamic hover effects for the grid */
+        .photo-grid:hover .photo-card {
+            transform: scale(0.9); /* Make other images smaller */
+            opacity: 0.5; /* Fade them out more */
+            filter: grayscale(90%); /* Increase grayscale effect */
+        }
+        .photo-grid .photo-card:hover {
+            transform: scale(1.2); /* Make hovered image super big */
+            opacity: 1;
+            filter: grayscale(0%);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+            z-index: 10;
+        }
+        .photo-grid .photo-card:hover .photo-description {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
+                <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
+                <a href="/deliverables.html" class="hover:text-sky-500 transition-colors">Deliverable Examples</a>
+                <a href="/fit.html" class="hover:text-sky-500 transition-colors">Culture Fit</a>
+                <a href="/responses.html" class="hover:text-sky-500 transition-colors">Application Responses</a>
+                <a href="/goals.html" class="hover:text-sky-500 transition-colors">Goals</a>
+                <a href="/fun.html" class="text-sky-500 font-semibold transition-colors">Beyond Work</a>
+                <a href="/thankyou.html" class="hover:text-sky-500 transition-colors">Thank You</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
+        <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
+        <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
+        <a href="/deliverables.html" class="text-2xl font-semibold text-slate-800">Deliverables</a>
+        <a href="/fit.html" class="text-2xl font-semibold text-slate-800">Culture Fit</a>
+        <a href="/responses.html" class="text-2xl font-semibold text-slate-800">Responses</a>
+        <a href="/goals.html" class="text-2xl font-semibold text-slate-800">Goals</a>
+        <a href="/fun.html" class="text-2xl font-semibold text-sky-500">Beyond Work</a>
+        <a href="/thankyou.html" class="text-2xl font-semibold text-slate-800">Thank You</a>
+    </div>
+
+
+    <!-- Main Content Section -->
+    <main class="pt-32 pb-16">
+        <section id="intro" class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">Beyond the Resume</h1>
+                <p class="mt-4 text-lg text-slate-600">
+                   A few snapshots from my life outside of work that capture my passions for sports, travel, and continuous learning. Hover over any image to learn more.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Photo Collage Section -->
+        <section id="photo-collage" class="container mx-auto px-6 pt-24 pb-16">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-4 grid-rows-2 gap-4 h-[600px] photo-grid">
+                    <!-- Image 1 (Large) -->
+                    <div class="col-span-2 row-span-2 photo-card">
+                        <img src="https://placehold.co/800x800/e2e8f0/334155?text=Basketball" alt="Placeholder Image 1">
+                        <div class="photo-description">
+                            <h3 class="font-bold text-lg">Placeholder Title 1</h3>
+                            <p class="text-sm">Placeholder description for the first image.</p>
+                        </div>
+                    </div>
+                    <!-- Image 2 -->
+                    <div class="col-span-1 row-span-1 photo-card">
+                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Travel" alt="Placeholder Image 2">
+                        <div class="photo-description">
+                            <h3 class="font-bold text-lg">Placeholder Title 2</h3>
+                            <p class="text-sm">Placeholder description.</p>
+                        </div>
+                    </div>
+                    <!-- Image 3 -->
+                    <div class="col-span-1 row-span-1 photo-card">
+                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Reading" alt="Placeholder Image 3">
+                        <div class="photo-description">
+                            <h3 class="font-bold text-lg">Placeholder Title 3</h3>
+                            <p class="text-sm">Placeholder description.</p>
+                        </div>
+                    </div>
+                    <!-- Image 4 -->
+                    <div class="col-span-1 row-span-1 photo-card">
+                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Outdoors" alt="Placeholder Image 4">
+                        <div class="photo-description">
+                            <h3 class="font-bold text-lg">Placeholder Title 4</h3>
+                            <p class="text-sm">Placeholder description.</p>
+                        </div>
+                    </div>
+                    <!-- Image 5 -->
+                    <div class="col-span-1 row-span-1 photo-card">
+                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Yoga" alt="Placeholder Image 5">
+                        <div class="photo-description">
+                            <h3 class="font-bold text-lg">Placeholder Title 5</h3>
+                            <p class="text-sm">Placeholder description.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+            const toggleMobileMenu = () => {
+                const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
+                if (isMenuOpen) {
+                    mobileMenu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('pointer-events-none');
+                        document.body.style.overflow = 'auto';
+                    }, 300);
+                } else {
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', toggleMobileMenu);
+                mobileMenuLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+                mobileMenu.addEventListener('click', (event) => {
+                    if (event.target === mobileMenu) toggleMobileMenu();
+                });
+                window.addEventListener('keydown', (e) => {
+                    const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
+                    if (e.key === 'Escape' && isMenuOpen) toggleMobileMenu();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
