@@ -1,1 +1,177 @@
-This is my thank you page :)
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You & Next Steps | Walter Petrouchin</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS for styling and animations -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+            color: #0f172a; /* slate-900 */
+        }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        /* Mobile Menu Transition */
+        #mobile-menu {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigation Header -->
+    <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect shadow-lg">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
+                <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
+                <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
+                <a href="/deliverables.html" class="hover:text-sky-500 transition-colors">Deliverable Examples</a>
+                <a href="/fit.html" class="hover:text-sky-500 transition-colors">Culture Fit</a>
+                <a href="/responses.html" class="hover:text-sky-500 transition-colors">Application Responses</a>
+                <a href="/goals.html" class="hover:text-sky-500 transition-colors">Goals</a>
+                <a href="/fun.html" class="hover:text-sky-500 transition-colors">Beyond Work</a>
+                <a href="/thankyou.html" class="text-sky-500 font-semibold transition-colors">Thank You</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <div class="lg:hidden">
+                <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
+        <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
+        <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
+        <a href="/deliverables.html" class="text-2xl font-semibold text-slate-800">Deliverables</a>
+        <a href="/fit.html" class="text-2xl font-semibold text-slate-800">Culture Fit</a>
+        <a href="/responses.html" class="text-2xl font-semibold text-slate-800">Responses</a>
+        <a href="/goals.html" class="text-2xl font-semibold text-slate-800">Goals</a>
+        <a href="/fun.html" class="text-2xl font-semibold text-slate-800">Beyond Work</a>
+        <a href="/thankyou.html" class="text-2xl font-semibold text-sky-500">Thank You</a>
+    </div>
+
+
+    <!-- Main Content Section -->
+    <main class="pt-32 pb-16">
+        <section id="intro" class="container mx-auto px-6 text-center">
+            <div class="max-w-3xl mx-auto">
+                <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">Thank You & Next Steps</h1>
+                <p class="mt-4 text-lg text-slate-600">
+                   I appreciate you taking the time to review my interactive application. I am confident in my ability to deliver exceptional results for your team and am eager to discuss this opportunity further.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Concluding Video Section -->
+        <section id="video" class="container mx-auto px-6 pt-24 pb-16">
+            <div class="max-w-4xl mx-auto">
+                <div class="aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-2xl shadow-slate-900/10 border border-slate-200">
+                     <!-- Placeholder for your concluding video -->
+                    <iframe 
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen
+                        class="w-full h-full"
+                        title="Placeholder Video">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps Section -->
+        <section id="next-steps" class="container mx-auto px-6 pt-16 pb-16">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl font-bold text-slate-800">Ready When You Are</h2>
+                <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+                    <!-- Button 1: Schedule Interview -->
+                    <a href="mailto:walter.petr@yahoo.com?subject=Interview%20%7C%20Walter%20Petrouchin%20%7C%20Strategy%20Associate%20Role&body=Hi%20Walter%2C%0A%0AI've%20reviewed%20your%20application%20website%20and%20would%20like%20to%20schedule%20an%20interview%20to%20discuss%20the%20Strategy%20Associate%20role.%0A%0APlease%20let%20me%20know%20what%20times%20work%20best%20for%20you.%0A%0ABest%2C" 
+                       class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-sky-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-sky-600 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        Schedule an Interview
+                    </a>
+                    
+                    <!-- Button 2: Download PDF Resume -->
+                    <a href="https://drive.google.com/file/d/1OBfZjkVknFKKR1d5NxqDKZRZCOlbgy5K/view?usp=sharing" 
+                       target="_blank" 
+                       class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-slate-200 text-slate-800 font-semibold py-3 px-8 rounded-lg hover:bg-slate-300 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                        </svg>
+                        Download PDF Resume
+                    </a>
+                </div>
+                <div class="mt-12 text-slate-500">
+                    <p class="font-semibold text-slate-700">Walter Petrouchin</p>
+                    <p>walter.petr@yahoo.com | (310) 874-4247</p>
+                    <a href="https://www.linkedin.com/in/walterpetrouchin/" target="_blank" rel="noopener noreferrer" class="text-sky-500 hover:underline">LinkedIn Profile</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- JavaScript for interactivity -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+
+            const toggleMobileMenu = () => {
+                const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
+                if (isMenuOpen) {
+                    mobileMenu.classList.add('opacity-0');
+                    setTimeout(() => {
+                        mobileMenu.classList.add('pointer-events-none');
+                        document.body.style.overflow = 'auto';
+                    }, 300);
+                } else {
+                    mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+                    document.body.style.overflow = 'hidden';
+                }
+            };
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', toggleMobileMenu);
+                mobileMenuLinks.forEach(link => link.addEventListener('click', toggleMobileMenu));
+                mobileMenu.addEventListener('click', (event) => {
+                    if (event.target === mobileMenu) toggleMobileMenu();
+                });
+                window.addEventListener('keydown', (e) => {
+                    const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
+                    if (e.key === 'Escape' && isMenuOpen) toggleMobileMenu();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
