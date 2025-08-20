@@ -206,9 +206,12 @@
             
             const renderIntro = () => {
                 quizModalContent.innerHTML = `
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold text-slate-800">Just One More Thing...</h3>
-                        <p class="mt-4 text-slate-600">You've made it to the final step. This is a quick, fun quiz to see how well you've gotten to know me through this site. It should only take a minute, and there might be a small thank you for your team at the end!</p>
+                    <div class="flex justify-between items-start">
+                        <h3 class="text-2xl font-bold text-slate-800 text-left">Just One More Thing...</h3>
+                        <button id="close-quiz" class="text-slate-400 hover:text-slate-800 text-3xl leading-none">&times;</button>
+                    </div>
+                    <div class="text-left mt-4">
+                        <p class="text-slate-600">You've made it to the final step. This is a quick, fun quiz to see how well you've gotten to know me through this site. It should only take a minute, and there might be a small thank you for your team at the end!</p>
                         <button id="start-quiz-button" class="mt-8 bg-sky-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-sky-600 transition-colors">Start the Quiz</button>
                     </div>
                 `;
@@ -248,7 +251,7 @@
                             <p class="text-3xl font-bold tracking-widest my-2">XXXX XXXX XXXX XXXX</p>
                             <p class="text-sm">PIN: XXXX</p>
                         </div>
-                        <p class="text-sm text-slate-500 italic">I've learned that being generous helps me feel amazing, and I do my best to be that way whenever possible. I hope this brings a little boost to your team's day.</p>
+                        <p class="text-sm text-slate-500 italic">I believe that going the extra mile is a reflection of one's character. I hope this brings a little boost to your team's day.</p>
                         <button id="close-quiz-success" class="mt-6 bg-sky-500 text-white font-semibold py-2 px-6 rounded-lg hover:bg-sky-600 transition-colors">Close</button>
                     </div>
                 `;
@@ -272,11 +275,12 @@
 
                     if (selectedIndex === correctIndex) {
                         e.target.classList.add('correct');
-                        hintArea.textContent = 'Correct! Loading next question...';
+                        
+                        const isLastQuestion = currentQuestionIndex === quizData.length - 1;
+                        hintArea.textContent = isLastQuestion ? 'Success! Revealing your reward...' : 'Correct! Loading next question...';
                         hintArea.classList.remove('text-red-600');
                         hintArea.classList.add('text-green-600');
                         
-                        // Update progress bar
                         const progressPercent = ((currentQuestionIndex + 1) / quizData.length) * 100;
                         progressBar.style.width = `${progressPercent}%`;
 
