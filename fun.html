@@ -30,13 +30,26 @@
         #mobile-menu {
             transition: opacity 0.3s ease-in-out;
         }
-        /* Photo collage styles */
+        
+        /* --- NEW MOBILE-FIRST MOSAIC STYLES --- */
+        .mosaic-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem; /* space between stacked images */
+        }
         .photo-card {
             position: relative;
+            width: 100%;
+            height: 300px; /* Consistent height on mobile */
             overflow: hidden;
             border-radius: 0.75rem; /* rounded-xl */
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, opacity 0.3s ease-in-out, filter 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border: 4px solid white;
+        }
+        .photo-card:hover {
+            transform: scale(1.03); /* Subtle zoom on mobile */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         .photo-card img {
             width: 100%;
@@ -55,23 +68,36 @@
             transform: translateY(20px);
             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
         }
-
-        /* UPDATED: More dynamic hover effects for the grid */
-        .photo-grid:hover .photo-card {
-            transform: scale(0.9); /* Make other images smaller */
-            opacity: 0.5; /* Fade them out more */
-            filter: grayscale(90%); /* Increase grayscale effect */
-        }
-        .photo-grid .photo-card:hover {
-            transform: scale(1.2); /* Make hovered image super big */
-            opacity: 1;
-            filter: grayscale(0%);
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
-            z-index: 10;
-        }
-        .photo-grid .photo-card:hover .photo-description {
+        .photo-card:hover .photo-description {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        /* --- DESKTOP OVERRIDES --- */
+        /* Targets screens larger than mobile (768px and up) */
+        @media (min-width: 769px) {
+            .mosaic-container {
+                position: relative;
+                display: block; /* Revert from flex to block */
+                width: 100%;
+                height: 80vh;
+                min-height: 700px;
+            }
+            .photo-card {
+                position: absolute;
+                height: auto; /* Revert from fixed height */
+            }
+            #photo-1 { top: 0%; left: 10%; width: 30%; height: 45%; transform: rotate(-3deg); }
+            #photo-2 { top: 50%; left: 5%; width: 40%; height: 45%; transform: rotate(2deg); }
+            #photo-3 { top: 15%; left: 45%; width: 25%; height: 60%; transform: rotate(4deg); }
+            #photo-4 { top: 5%; left: 75%; width: 20%; height: 30%; transform: rotate(-5deg); }
+            #photo-5 { top: 40%; left: 72%; width: 28%; height: 50%; transform: rotate(8deg); }
+            
+            .photo-card:hover {
+                transform: scale(1.1) rotate(0deg); /* Enlarge and straighten on hover */
+                box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* shadow-2xl */
+                z-index: 10;
+            }
         }
     </style>
 </head>
@@ -132,42 +158,42 @@
         <!-- Photo Collage Section -->
         <section id="photo-collage" class="container mx-auto px-6 pt-24 pb-16">
             <div class="max-w-6xl mx-auto">
-                <div class="grid grid-cols-4 grid-rows-2 gap-4 h-[600px] photo-grid">
-                    <!-- Image 1 (Large) -->
-                    <div class="col-span-2 row-span-2 photo-card">
-                        <img src="https://placehold.co/800x800/e2e8f0/334155?text=Basketball" alt="Placeholder Image 1">
+                <div class="mosaic-container">
+                    <!-- Image 1 -->
+                    <div id="photo-1" class="photo-card">
+                        <img src="https://placehold.co/800x600/e2e8f0/334155?text=Basketball" alt="Placeholder Image 1">
                         <div class="photo-description">
                             <h3 class="font-bold text-lg">Placeholder Title 1</h3>
                             <p class="text-sm">Placeholder description for the first image.</p>
                         </div>
                     </div>
                     <!-- Image 2 -->
-                    <div class="col-span-1 row-span-1 photo-card">
-                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Travel" alt="Placeholder Image 2">
+                    <div id="photo-2" class="photo-card">
+                        <img src="https://placehold.co/600x800/e2e8f0/334155?text=Travel" alt="Placeholder Image 2">
                         <div class="photo-description">
                             <h3 class="font-bold text-lg">Placeholder Title 2</h3>
                             <p class="text-sm">Placeholder description.</p>
                         </div>
                     </div>
                     <!-- Image 3 -->
-                    <div class="col-span-1 row-span-1 photo-card">
-                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Reading" alt="Placeholder Image 3">
+                    <div id="photo-3" class="photo-card">
+                        <img src="https://placehold.co/800x1000/e2e8f0/334155?text=Reading" alt="Placeholder Image 3">
                         <div class="photo-description">
                             <h3 class="font-bold text-lg">Placeholder Title 3</h3>
                             <p class="text-sm">Placeholder description.</p>
                         </div>
                     </div>
                     <!-- Image 4 -->
-                    <div class="col-span-1 row-span-1 photo-card">
-                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Outdoors" alt="Placeholder Image 4">
+                    <div id="photo-4" class="photo-card">
+                        <img src="https://placehold.co/400x600/e2e8f0/334155?text=Outdoors" alt="Placeholder Image 4">
                         <div class="photo-description">
                             <h3 class="font-bold text-lg">Placeholder Title 4</h3>
                             <p class="text-sm">Placeholder description.</p>
                         </div>
                     </div>
                     <!-- Image 5 -->
-                    <div class="col-span-1 row-span-1 photo-card">
-                        <img src="https://placehold.co/400x400/e2e8f0/334155?text=Yoga" alt="Placeholder Image 5">
+                    <div id="photo-5" class="photo-card">
+                        <img src="https://placehold.co/1000x600/e2e8f0/334155?text=Yoga" alt="Placeholder Image 5">
                         <div class="photo-description">
                             <h3 class="font-bold text-lg">Placeholder Title 5</h3>
                             <p class="text-sm">Placeholder description.</p>
