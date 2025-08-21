@@ -38,6 +38,21 @@
             opacity: 1;
             transform: translateY(0);
         }
+        /* Styles for staggered line animation */
+        .text-line {
+            display: block;
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+            margin-bottom: 1rem; /* Adds space between lines */
+        }
+        .text-line:last-child {
+            margin-bottom: 0; /* Removes margin from the last line */
+        }
+        .text-line.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -98,13 +113,12 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto">
                     <div class="text-center mb-12">
-                         <h2 class="text-3xl md:text-4xl font-bold text-slate-900">My Journey & How It Applies</h2>
-                         <p class="mt-4 max-w-2xl mx-auto text-slate-600">My path has been unconventional but intentional, providing me with a unique blend of analytical, legal, and entrepreneurial skills directly applicable to the Strategy Associate role.</p>
+                         <h2 class="text-3xl md:text-4xl font-bold text-slate-900">My Journey & How It Prepared Me For ACQ</h2>
                     </div>
 
-                    <!-- Unconventional Intro Note -->
+                    <!-- Intro Note -->
                     <div class="text-center max-w-2xl mx-auto mb-20 bg-slate-50 p-6 rounded-xl border border-slate-200">
-                        <p class="text-slate-600 italic">A quick note: I recognize that this is an unconventional approach to a job application, and going through it is 100% optional. But I figured I'd share this info in case you want to gain a better understanding of who I am. It should only take a couple of minutes to read through.</p>
+                        <p class="text-slate-600 italic">A quick note: I recognize that this is a different approach to a job application, and going through it is 100% optional. But I figured I'd share this info in case you want to gain a better understanding of who I am. I expect it'll take a couple of minutes to read through.</p>
                     </div>
 
 
@@ -152,32 +166,42 @@
             }
 
             // --- Timeline Data ---
+            // Helper function to format text for staggered animation
+            const formatText = (text) => {
+                const lines = text.split('<br>');
+                return lines.map((line, index) => {
+                    if (line.trim() === '') return '<br>'; // Keep intentional line breaks
+                    return `<span class="text-line" style="transition-delay: ${index * 100}ms;">${line.trim()}</span>`;
+                }).join('');
+            };
+
             const timelineData = [
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/01_bzamzt.jpg', text: "Starting from the beginning..<br><br>Growing up in an immigrant household is one of the best things that's ever happened to me.<br><br>I learned that nothing is given and everything is earned; this mindset has been the foundation of my entire life." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753750/02_upnhxi.png', text: "Anytime I wasn't at school or in sports, I was at my family's window and door business, absorbing the realities of entrepreneurship." },
-                { type: 'video', url: 'https://res.cloudinary.com/dq7glunwv/video/upload/v1755753772/03_fgtdsu.mov', text: "My first \"sales training\" was at age 6, demonstrating products at trade shows.<br><br>I learned early on how to connect with people and communicate value.<br><br>(The video to the right was taken when I was ~14)" },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753754/04_ykzou9.png', text: "By 10, I was a key team member.<br><br>Because my English was more advanced than my parents', I was trusted to write client emails for deals worth over six figures.<br><br>(This pic was taken when I was ~16)" },
-                { type: 'multi-image', urls: ['https://res.cloudinary.com/dq7glunwv/image/upload/v1755753754/05_dadnjx.png', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753751/06_jp574r.png'], text: "When needed, I also worked in our factory and at client job sites, learning the value of hard work.<br><br>On a number of occasions, I worked through the night to meet important deadlines.<br><br>So, yes, I am most definitely ready to work 7am-7pm on workshop weekends and whenever needed!" },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/07_ns2gkx.png', text: "By the time I was 18, I'd spent more than 1,000 hours helping my parents (and thus also learning business)." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753758/08_iig0jx.png', text: "Beyond my upbringing, the most developmentally impactful thing I've done is martial arts." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753757/09_t7x0bb.png', text: "I started when I was 5.. <br><br>..and by the time was a teenager, I had won many local, state, national, and international championships.. and also earned my jr. black belt." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753755/10_h8fav0.png', text: "Spending my formative years in such a highly competitive environment helped me:<br><br>1) develop my discipline even more +<br>2) develop an incredible ability to focus." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/11_zwgise.jpg', text: "As high school rolled around, I funneled my athleticism and determination into my favorite sport: basketball.<br><br>But, I'd never played organized basketball and for the first time in my life, I felt thoroughly out of place." },
-                { type: 'video', url: 'https://res.cloudinary.com/dq7glunwv/video/upload/v1755753778/12_mbg2fx.mov', text: "So I did what I learned through many years of working in my parents' business: work harder.<br><br>I'd be the first one in, last one out of the gym. I worked harder than anyone else I knew.<br><br>(And yes, that's sweat dripping off of my shorts. Excuse the unprofessional-ness of the video; but I figured it helps demonstrate my insane work ethic and desire to learn and be great.)" },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/13_exbvqy.jpg', text: "By my 3rd year, I had progressed enough to start thinking about playing in college.<br><br>But I had virtually no shot at going pro so I turned my full attention to academics." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753747/14_dwn0ln.jpg', text: "Luckily, despite doing competitive sports 7 days/week, spending ~30 hours/week in the gym.. I had developed strong productivity habits and had trained my brain to be very efficient." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753761/15_nkeig4.jpg', text: "So I was able to earn a 4.4 GPA in high school." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753764/28_mxz4yv.jpg', text: "My path has been unconventional but intentional.<br><br>It's provided me with a unique blend of skills<br>analytical, legal, and entrepreneurial<br>directly applicable to the Strategy Associate role." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/01_bzamzt.jpg', text: "Starting from the beginning<br><br>Growing up in an immigrant household is one of the best things that's ever happened to me.<br><br>I learned that nothing is given and everything is earned.<br>This mindset has been the foundation of my entire life." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753750/02_upnhxi.png', text: "Anytime I wasn't at school or in sports<br>I was at my family's window and door business<br>absorbing the realities of entrepreneurship." },
+                { type: 'video', url: 'https://res.cloudinary.com/dq7glunwv/video/upload/v1755753772/03_fgtdsu.mov', text: "My first \"sales training\" was at age 6<br>demonstrating products at trade shows.<br><br>I learned early on how to connect with people<br>and communicate value.<br><br>(The video was taken when I was ~14)" },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753754/04_ykzou9.png', text: "By age 10, I was a key team member.<br><br>Because my English was more advanced than my parents'<br>I was trusted to write client emails<br>for deals worth over six figures.<br><br>(This pic was taken when I was ~16)" },
+                { type: 'multi-image', urls: ['https://res.cloudinary.com/dq7glunwv/image/upload/v1755753754/05_dadnjx.png', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753751/06_jp574r.png'], text: "When needed, I also worked in our factory<br>and at client job sites<br>learning the value of hard work.<br><br>I’ve worked through the night to meet important deadlines.<br><br>So, yes, I am most definitely ready for 7am-7pm on workshop weekends<br>and whenever else is needed!" },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/07_ns2gkx.png', text: "By the time I was 18<br>I'd spent more than 1,000 hours<br>helping my parents (and thus also learning business)." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753758/08_iig0jx.png', text: "Beyond my upbringing<br>the most developmentally impactful thing I've done<br>is martial arts." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753757/09_t7x0bb.png', text: "I started when I was 5<br><br>and by the time I was a teenager<br>I had won many local, state, national, and international championships<br>and also earned my jr. black belt." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753755/10_h8fav0.png', text: "Spending my formative years in a highly competitive environment helped me:<br><br>1) develop my discipline even more +<br>2) develop an incredible ability to focus." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/11_zwgise.jpg', text: "As high school rolled around<br>I funneled my athleticism and determination<br>into my favorite sport: basketball.<br><br>But I'd never played organized basketball before<br>and for the first time in my life, I felt thoroughly out of place." },
+                { type: 'video', url: 'https://res.cloudinary.com/dq7glunwv/video/upload/v1755753778/12_mbg2fx.mov', text: "So I did what I learned from my parents' business:<br>work harder.<br><br>I was the first one in, last one out of the gym.<br>I worked harder than anyone else I knew.<br><br>(Yes, that's sweat dripping off my <i>shorts</i>. Excuse the unprofessional-ness of the video, but I figured it helps demonstrate my insane work ethic and desire to learn and be great.)" },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/13_exbvqy.jpg', text: "By my 3rd year, I had progressed enough<br>to start thinking about playing in college.<br><br>But I had virtually no shot at going pro<br>so I turned my full attention to academics." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753747/14_dwn0ln.jpg', text: "Luckily, despite doing competitive sports 7 days/week<br>and spending ~30 hours/week in the gym<br>I had developed strong productivity habits<br>and had trained my brain to be very efficient." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753761/15_nkeig4.jpg', text: "So I graduated high school with a 4.4 GPA." },
                 { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753749/16_qkagns.png', text: "And was offered full academic scholarships to college." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753748/17_gbsacx.png', text: "I chose to study accounting + computer science at USC." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753763/18_xgxlsc.png', text: "I wanted to learn accounting b/c I'd heard it's the \"language of business\" and I knew that entrepreneurship was in my future so it made sense.<br><br>And I added computer science because 1) I love challenging myself and 2) technology is the future so I figured I'd stay ahead of the game." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754571/19_plft1i.jpg', text: "Drinking and partying never appealed to me so, instead, I invested all of my Energy into academics and leadership positions.<br><br>I took 21 units a semester and graduated a year early, in 3 years, with a 3.9 GPA." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754571/20_ehy9jb.jpg', text: "After graduating from undergrad, I walked away from opportunities at McKinsey, Boston Consulting Group, PriceWaterhouseCoopers, etc. to go to law school at USC Gould." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753756/21_kafnnk.png', text: "Because of what happened when I was 18:<br><br>Our family business was wrongfully sued for $9,999. I saw firsthand how the \"rules of the game\" could be used against honest, hardworking people." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754546/22_ulqear.jpg', text: "I decided I had to learn the rules.<br><br>I enrolled in a college law class, studied contract law, wrote our defense briefs myself, and successfully defended our business in court (as an 18 year old).<br><br>This experience was the catalyst for law school. While my passion was always business, I knew that mastering the art of argumentation, structured thinking, and persuasive writing would be an invaluable asset." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754547/23_mdyx3d.jpg', text: "Law school honed my ability to create high-stakes deliverables.<br><br>It trained me to synthesize massive amounts of complex information into clear, logical, and compelling memos-a core function of the Strategy Associate role." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753766/24_bc6jjn.jpg', text: "Before I enrolled in law school, I considered going to business school. So, naturally, I studied for the GMAT (and ultimately scored a 740).<br><br>Through the exam prep, I developed an ability to perform quick, accurate numerical analysis required in fast-paced strategic discussions - super excited to use these skills at ACQ!" },
-                { type: 'multi-image', urls: ['https://res.cloudinary.com/dq7glunwv/image/upload/v1755753765/25_rqqdl3.jpg', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753771/26_fjqilv.jpg', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753762/27_veucqj.jpg'], text: "I actively pursued leadership opportunities in every phase of my life, consistently securing leadership roles.<br><br>As President of one organization, I identified new funding sources and grew our budget by 300%." },
-                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753764/28_mxz4yv.jpg', text: "I really do believe that I've been preparing for this role for many years now, without even knowing it, and I am beyond excited to take all of my varied life experiences and learnings and apply them to my work as a Strategy Associate at ACQ to do really awesome work with you all." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753748/17_gbsacx.png', text: "I chose to study Accounting + Computer Science at USC." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753763/18_xgxlsc.png', text: "I wanted to learn accounting<br>b/c it's the \"language of business\"<br>and I knew entrepreneurship was in my future.<br><br>And I added computer science because:<br>1) I love challenging myself, and<br>2) technology is the future, so I figured I'd stay ahead." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754571/19_plft1i.jpg', text: "Drinking and partying never appealed to me.<br><br>Instead, I invested all of my energy into academics and leadership.<br><br>I took 21 units a semester<br>and graduated a year early, in 3 years, with a 3.9 GPA." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754571/20_ehy9jb.jpg', text: "After graduating, I walked away from opportunities at<br>McKinsey, BCG, PwC, etc...<br>to go to law school at USC Gould." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753756/21_kafnnk.png', text: "Because of what happened when I was 18:<br><br>Our family business was wrongfully sued for $9,999.<br><br>I saw firsthand how the \"rules of the game\"<br>could be used against honest, hardworking people." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754546/22_ulqear.jpg', text: "I decided I had to learn the rules.<br><br>I enrolled in a college law class<br>studied contract law<br>wrote our defense briefs myself<br>and successfully defended our business in court (as an 18 year old).<br><br>This experience was the catalyst for law school.<br><br>While my passion was always business<br>I knew that mastering argumentation, structured thinking, and persuasive writing would be an invaluable asset." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754547/23_mdyx3d.jpg', text: "Law school honed my ability<br>to create high-stakes deliverables.<br><br>It trained me to synthesize massive amounts of complex info<br>into clear, logical, and compelling memos<br>a core function of the Strategy Associate role." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753766/24_bc6jjn.jpg', text: "Before law school, I considered business school.<br>So, naturally, I studied for the GMAT (and scored a 740).<br><br>Through that exam prep, I developed an ability<br>to perform quick, accurate numerical analysis<br>required in fast-paced strategic discussions.<br><br>Super excited to use these skills at ACQ!" },
+                { type: 'multi-image', urls: ['https://res.cloudinary.com/dq7glunwv/image/upload/v1755753765/25_rqqdl3.jpg', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753771/26_fjqilv.jpg', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753762/27_veucqj.jpg'], text: "I actively pursued leadership opportunities<br>in every phase of my life<br>consistently securing leadership roles.<br><br>As President of one organization<br>I identified new funding sources<br>and grew our budget by 300%." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753764/28_mxz4yv.jpg', text: "My journey has been unconventional,<br>but every step has prepared me for this role.<br><br>I'm excited to bring my unique blend of experiences<br>to the Strategy Associate position at ACQ<br>and contribute from day one." },
             ];
 
             const timelineContainer = document.getElementById('timeline-items');
@@ -187,12 +211,12 @@
 
                 let mediaHTML = '';
                 if (item.type === 'image') {
-                    mediaHTML = `<img src="${item.url}" class="w-full h-full object-cover rounded-lg" alt="Timeline image ${index + 1}">`;
+                    mediaHTML = `<img src="${item.url}" class="w-full h-full object-cover rounded-lg" alt="Timeline image ${index + 1}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Image+Not+Found';">`;
                 } else if (item.type === 'video') {
                     mediaHTML = `<video src="${item.url}" class="w-full h-full object-cover rounded-lg" autoplay loop muted playsinline></video>`;
                 } else if (item.type === 'multi-image') {
                     const imageGridClass = item.urls.length === 2 ? 'grid-cols-2' : 'grid-cols-3';
-                    mediaHTML = `<div class="grid ${imageGridClass} gap-2">${item.urls.map(url => `<img src="${url}" class="w-full h-full object-cover rounded-lg" alt="Timeline image ${index + 1}">`).join('')}</div>`;
+                    mediaHTML = `<div class="grid ${imageGridClass} gap-2">${item.urls.map(url => `<img src="${url}" class="w-full h-full object-cover rounded-lg" alt="Timeline image ${index + 1}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Image';">`).join('')}</div>`;
                 }
 
                 const timelineItem = `
@@ -200,7 +224,7 @@
                         <div class="md:flex items-center ${alignmentClass}">
                             <div class="md:w-1/2 ${isReversed ? 'md:pl-8' : 'md:pr-8'}">
                                 <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-md">
-                                    <p class="text-slate-600 text-lg leading-relaxed">${item.text}</p>
+                                    <p class="text-slate-600 text-lg">${formatText(item.text)}</p>
                                 </div>
                             </div>
                             <div class="md:w-1/2 mt-4 md:mt-0">
@@ -215,11 +239,17 @@
 
             // --- Fade-in on Scroll Animation ---
             const faders = document.querySelectorAll('.fade-in');
-            const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+            const appearOptions = { threshold: 0.3, rootMargin: "0px 0px -50px 0px" };
             const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
+                        // Make the container visible first
                         entry.target.classList.add('visible');
+                        // Then trigger the line-by-line animation
+                        const lines = entry.target.querySelectorAll('.text-line');
+                        lines.forEach(line => {
+                            line.classList.add('visible');
+                        });
                         appearOnScroll.unobserve(entry.target);
                     }
                 });
