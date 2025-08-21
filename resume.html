@@ -124,7 +124,8 @@
 
                     <!-- Timeline Container -->
                     <div class="relative">
-                        <div class="absolute left-4 md:left-1/2 w-0.5 h-full bg-slate-200" aria-hidden="true"></div>
+                        <!-- Desktop-only timeline line -->
+                        <div class="absolute left-1/2 w-0.5 h-full bg-slate-200 hidden md:block" aria-hidden="true"></div>
                         
                         <!-- Timeline items will be dynamically populated here -->
                         <div id="timeline-items" class="space-y-16"></div>
@@ -207,7 +208,6 @@
             const timelineContainer = document.getElementById('timeline-items');
             timelineData.forEach((item, index) => {
                 const isReversed = index % 2 !== 0;
-                const alignmentClass = isReversed ? 'md:flex-row-reverse' : '';
 
                 let mediaHTML = '';
                 if (item.type === 'image') {
@@ -219,19 +219,37 @@
                     mediaHTML = `<div class="grid ${imageGridClass} gap-2">${item.urls.map(url => `<img src="${url}" class="w-full h-full object-cover rounded-lg" alt="Timeline image ${index + 1}" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/475569?text=Image';">`).join('')}</div>`;
                 }
 
-                const timelineItem = `
-                    <div class="relative fade-in">
-                        <div class="md:flex items-center ${alignmentClass}">
-                            <div class="md:w-1/2 ${isReversed ? 'md:pl-8' : 'md:pr-8'}">
-                                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-md">
-                                    <p class="text-slate-600 text-lg">${formatText(item.text)}</p>
-                                </div>
-                            </div>
-                            <div class="md:w-1/2 mt-4 md:mt-0">
-                                <div class="p-2 bg-white rounded-xl shadow-lg">${mediaHTML}</div>
+                // --- HTML Block Definitions ---
+                // Flips the visual order for desktop using flex-row-reverse
+                const alignmentClass = isReversed ? '' : 'md:flex-row-reverse';
+
+                const imageBlockHTML = `
+                    <div class="w-full md:w-1/2">
+                        <div class="p-2 bg-white rounded-xl shadow-lg">${mediaHTML}</div>
+                    </div>`;
+
+                const textBlockHTML = `
+                    <div class="w-full md:w-1/2 mt-4 md:mt-0 ${isReversed ? 'md:pl-8' : 'md:pr-8'}">
+                        <div class="relative ml-8 md:ml-0">
+                            <!-- Mobile-only timeline line and dot -->
+                            <div class="absolute -left-4 top-0 w-0.5 h-full bg-slate-200 md:hidden"></div>
+                            <div class="absolute -left-6 top-4 h-4 w-4 rounded-full bg-sky-500 ring-8 ring-white md:hidden"></div>
+                            
+                            <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-md">
+                                <p class="text-slate-600 text-lg">${formatText(item.text)}</p>
                             </div>
                         </div>
-                        <div class="absolute left-4 top-8 md:left-1/2 md:top-1/2 md:-translate-y-1/2 -ml-2 h-4 w-4 rounded-full bg-sky-500 ring-8 ring-white"></div>
+                    </div>`;
+
+                // --- Final Assembly ---
+                const timelineItem = `
+                    <div class="relative fade-in">
+                        <div class="flex flex-col md:flex-row items-center ${alignmentClass}">
+                            ${imageBlockHTML}
+                            ${textBlockHTML}
+                        </div>
+                        <!-- Desktop-only dot -->
+                        <div class="hidden md:block absolute left-1/2 top-1/2 -translate-y-1/2 -ml-2 h-4 w-4 rounded-full bg-sky-500 ring-8 ring-white"></div>
                     </div>
                 `;
                 timelineContainer.innerHTML += timelineItem;
