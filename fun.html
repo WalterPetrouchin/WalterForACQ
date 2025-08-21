@@ -37,15 +37,20 @@
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
             overflow: hidden;
             border: 1px solid #e2e8f0; /* slate-200 */
+            margin-bottom: 1.5rem; /* Added margin for spacing between cards */
         }
         .mobile-photo-media {
             height: 300px;
             width: 100%;
         }
-        .mobile-photo-media img, .mobile-photo-media iframe {
+        .mobile-photo-media img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        .mobile-photo-media iframe {
+            width: 100%;
+            height: 100%;
         }
         .mobile-photo-description {
             padding: 1rem;
@@ -60,7 +65,7 @@
         }
 
         /* --- DESKTOP STYLES --- */
-        @media (min-width: 769px) {
+        @media (min-width: 768px) { /* Changed breakpoint to md for consistency with Tailwind */
             .desktop-mosaic-container {
                 position: relative;
                 width: 100%;
@@ -157,6 +162,9 @@
                 <p class="mt-4 text-lg text-slate-600">
                    A few snapshots from my life outside of work that capture my passions for sports, travel, and continuous learning. Hover over any image to learn more (or click to play).
                 </p>
+                <p class="mt-6 text-sm text-slate-500 italic">
+                    <strong>P.S.</strong> While these are the things I love to do in my spare time, I am fully committed to the ACQ Advisory Practice and ready to dedicate all the time and energy necessary to produce excellent work.
+                </p>
             </div>
         </section>
         
@@ -166,20 +174,20 @@
 
                 <!-- DESKTOP MOSAIC - Hidden on mobile -->
                 <div class="hidden md:block desktop-mosaic-container">
-                    <div id="photo-1" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Tomatoes.jpg" alt="Walter holding homegrown tomatoes"><div class="desktop-photo-description"><h3>Homegrown Veggies 😋</h3><p class="text-sm">I love growing my own veggies in my small backyard! Eating them makes me smile every time :)</p></div></div>
-                    <div id="photo-2" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Splits_cpj4zy.jpg" alt="Walter doing the splits"><div class="desktop-photo-description"><h3>Daily Discipline</h3><p class="text-sm">A daily yoga practice is a non-negotiable in my world: 1) it helps me feel my best and 2) I believe there’s great virtue in sustaining not-necessarily-easy habits over a long time horizon because doing so builds discipline that transfers into every area of life.</p></div></div>
+                    <div id="photo-1" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Tomatoes.jpg" alt="Walter holding homegrown tomatoes" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=Image+Not+Found';"><div class="desktop-photo-description"><h3>Homegrown Veggies 😋</h3><p class="text-sm">I love growing my own veggies in my small backyard! Eating them makes me smile every time :)</p></div></div>
+                    <div id="photo-2" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Splits_cpj4zy.jpg" alt="Walter doing the splits" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=Image+Not+Found';"><div class="desktop-photo-description"><h3>Daily Discipline</h3><p class="text-sm">A daily yoga practice is a non-negotiable in my world: 1) it helps me feel my best and 2) I believe there’s great virtue in sustaining not-necessarily-easy habits over a long time horizon because doing so builds discipline that transfers into every area of life.</p></div></div>
                     <div id="photo-3" class="desktop-photo-card"><iframe src="https://www.youtube.com/embed/CIGGDSdhWZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="desktop-photo-description"><h3>Day 10 of Learning Piano!</h3><p class="text-sm">I started learning to play the piano and sing about two weeks ago. This video that I shared with y’all is 1) most definitely nowhere near perfect, but 2) my 10th day of playing/singing and one that I enjoyed. I don’t do many things ‘just for fun’ but I really want to learn!</p></div></div>
-                    <div id="photo-4" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Take_the_staris_gjwa6g.png" alt="Walter with a stack of books"><div class="desktop-photo-description"><h3>Self-Improvement Addict</h3><p class="text-sm">I love reading! I read my first self-improvement book (Rich Dad Poor Dad) in fifth grade and haven’t looked back!</p></div></div>
-                    <div id="photo-5" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Basketball_zhgpwn.jpg" alt="Walter playing basketball"><div class="desktop-photo-description"><h3>Basketball 🫶</h3><p class="text-sm">Basketball is one of my favorite sports - I lose track of time and have an absolute blast every time I lace up :)</p></div></div>
+                    <div id="photo-4" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Take_the_staris_gjwa6g.png" alt="Walter with a stack of books" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=Image+Not+Found';"><div class="desktop-photo-description"><h3>Self-Improvement Addict</h3><p class="text-sm">I love reading! I read my first self-improvement book (Rich Dad Poor Dad) in fifth grade and haven’t looked back!</p></div></div>
+                    <div id="photo-5" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Basketball_zhgpwn.jpg" alt="Walter playing basketball" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=Image+Not+Found';"><div class="desktop-photo-description"><h3>Basketball 🫶</h3><p class="text-sm">Basketball is one of my favorite sports - I lose track of time and have an absolute blast every time I lace up :)</p></div></div>
                 </div>
 
                 <!-- MOBILE STACK - Hidden on desktop -->
-                <div class="md:hidden mobile-mosaic-container">
-                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Tomatoes.jpg" alt="Walter holding homegrown tomatoes"></div><div class="mobile-photo-description"><h3>Homegrown Veggies 😋</h3><p>I love growing my own veggies in my small backyard! Eating them makes me smile every time :)</p></div></div>
-                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Splits_cpj4zy.jpg" alt="Walter doing the splits"></div><div class="mobile-photo-description"><h3>Daily Discipline</h3><p>A daily yoga practice is a non-negotiable in my world: 1) it helps me feel my best and 2) I believe there’s great virtue in sustaining not-necessarily-easy habits over a long time horizon because doing so build discipline that transfers into every area of life.</p></div></div>
+                <div class="md:hidden space-y-6"> <!-- Using space-y for consistent spacing -->
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Tomatoes.jpg" alt="Walter holding homegrown tomatoes" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=Image+Not+Found';"></div><div class="mobile-photo-description"><h3>Homegrown Veggies 😋</h3><p>I love growing my own veggies in my small backyard! Eating them makes me smile every time :)</p></div></div>
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Splits_cpj4zy.jpg" alt="Walter doing the splits" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=Image+Not+Found';"></div><div class="mobile-photo-description"><h3>Daily Discipline</h3><p>A daily yoga practice is a non-negotiable in my world: 1) it helps me feel my best and 2) I believe there’s great virtue in sustaining not-necessarily-easy habits over a long time horizon because doing so build discipline that transfers into every area of life.</p></div></div>
                     <div class="mobile-photo-card"><div class="mobile-photo-media"><iframe src="https://www.youtube.com/embed/CIGGDSdhWZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="mobile-photo-description"><h3>Learning Piano!</h3><p>I started learning to play the piano and sing about two weeks ago. This video that I shared with y’all is 1) most definitely nowhere near perfect, but 2) my 10th day of playing/singing and one that I enjoyed. I don’t do many things ‘just for fun’ but I really want to learn!</p></div></div>
-                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Take_the_staris_gjwa6g.png" alt="Walter with a stack of books"></div><div class="mobile-photo-description"><h3>Self-Improvement Addict</h3><p>I love reading! I read my first self-improvement book (Rich Dad Poor Dad) in fifth grade and haven’t looked back!</p></div></div>
-                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Basketball_zhgpwn.jpg" alt="Walter playing basketball"></div><div class="mobile-photo-description"><h3>Basketball 🫶</h3><p>Basketball is one of my favorite sports - I lose track of time and have an absolute blast every time I lace up :)</p></div></div>
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Take_the_staris_gjwa6g.png" alt="Walter with a stack of books" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=Image+Not+Found';"></div><div class="mobile-photo-description"><h3>Self-Improvement Addict</h3><p>I love reading! I read my first self-improvement book (Rich Dad Poor Dad) in fifth grade and haven’t looked back!</p></div></div>
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Basketball_zhgpwn.jpg" alt="Walter playing basketball" onerror="this.onerror=null;this.src='https://placehold.co/600x400/f8fafc/0f172a?text=Image+Not+Found';"></div><div class="mobile-photo-description"><h3>Basketball 🫶</h3><p>Basketball is one of my favorite sports - I lose track of time and have an absolute blast every time I lace up :)</p></div></div>
                 </div>
 
             </div>
