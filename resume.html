@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resume | Walter Petrouchin</title>
+    <title>Resume & Story | Walter Petrouchin</title>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,9 +26,17 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
-        /* Mobile Menu Transition */
         #mobile-menu {
             transition: opacity 0.3s ease-in-out;
+        }
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -38,8 +46,6 @@
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
-            
-            <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
                 <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
                 <a href="/resume.html" class="text-sky-500 font-semibold transition-colors">Resume</a>
@@ -50,13 +56,9 @@
                 <a href="/fun.html" class="hover:text-sky-500 transition-colors">Beyond Work</a>
                 <a href="/thankyou.html" class="hover:text-sky-500 transition-colors">Thank You</a>
             </nav>
-
-            <!-- Mobile Menu Button -->
             <div class="lg:hidden">
                 <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
@@ -76,89 +78,153 @@
 
 
     <!-- Main Content Section -->
-    <main class="pt-32 pb-16 min-h-screen flex items-center">
-        <section id="resume-content" class="container mx-auto px-6 text-center">
+    <main class="pt-32 pb-16">
+        <section id="resume-content" class="container mx-auto px-6 text-center min-h-[calc(100vh-8rem)] flex items-center justify-center">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">My Resume & Story</h1>
                 <p class="mt-4 text-lg text-slate-600">
-                    Here you can find my formal resume. For a more in-depth look at my background, experiences, and what drives me, please view the presentation below.
+                    Here you can find my formal resume. For a more in-depth look at my background, experiences, and what drives me, please view the story below.
                 </p>
 
                 <div class="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <!-- Button 1: Download PDF -->
-                    <a href="https://drive.google.com/file/d/1OBfZjkVknFKKR1d5NxqDKZRZCOlbgy5K/view?usp=sharing" 
-                       target="_blank" 
-                       class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-sky-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-sky-600 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                        Download PDF Resume
-                    </a>
-                    
-                    <!-- Button 2: View Story Deck -->
-                    <a href="https://docs.google.com/presentation/d/1butZy3Ip3-ysBl2Iwek6O41x-MPgggivEE5vcmwzvjg/edit?usp=sharing" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-slate-200 text-slate-800 font-semibold py-3 px-8 rounded-lg hover:bg-slate-300 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3h3m-3 4h3m-3 4h3m-3 4h3" />
-                        </svg>
-                        The Story Behind the Resume
-                    </a>
+                    <a href="https://drive.google.com/file/d/1OBfZjkVknFKKR1d5NxqDKZRZCOlbgy5K/view?usp=sharing" target="_blank" class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-sky-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-sky-600 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>Download PDF Resume</a>
+                    <a href="#story" class="w-full sm:w-auto flex items-center justify-center gap-x-3 bg-slate-200 text-slate-800 font-semibold py-3 px-8 rounded-lg hover:bg-slate-300 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3h3m-3 4h3m-3 4h3m-3 4h3" /></svg>The Story Behind the Resume</a>
                 </div>
             </div>
         </section>
+
+        <!-- Story Timeline Section -->
+        <section id="story" class="bg-white border-y border-slate-200 py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                         <h2 class="text-3xl md:text-4xl font-bold text-slate-900">My Journey & How It Applies</h2>
+                         <p class="mt-4 max-w-2xl mx-auto text-slate-600">My path has been unconventional but intentional, providing me with a unique blend of analytical, legal, and entrepreneurial skills directly applicable to the Strategy Associate role.</p>
+                    </div>
+
+                    <!-- Unconventional Intro Note -->
+                    <div class="text-center max-w-2xl mx-auto mb-20 bg-slate-50 p-6 rounded-xl border border-slate-200">
+                        <p class="text-slate-600 italic">A quick note: I recognize that this is an unconventional approach to a job application, and going through it is 100% optional. But I figured I'd share this info in case you want to gain a better understanding of who I am. It should only take a couple of minutes to read through.</p>
+                    </div>
+
+
+                    <!-- Timeline Container -->
+                    <div class="relative">
+                        <div class="absolute left-4 md:left-1/2 w-0.5 h-full bg-slate-200" aria-hidden="true"></div>
+                        
+                        <!-- Timeline items will be dynamically populated here -->
+                        <div id="timeline-items" class="space-y-16"></div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- JavaScript for interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            
             // --- Mobile Menu Logic ---
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuLinks = mobileMenu.querySelectorAll('a');
-
             const toggleMobileMenu = () => {
                 const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
                 if (isMenuOpen) {
-                    // Close menu
                     mobileMenu.classList.add('opacity-0');
                     setTimeout(() => {
                         mobileMenu.classList.add('pointer-events-none');
                         document.body.style.overflow = 'auto';
                     }, 300);
                 } else {
-                    // Open menu
                     mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
                     document.body.style.overflow = 'hidden';
                 }
             };
-
             if (mobileMenuButton && mobileMenu) {
-                // Event Listeners
                 mobileMenuButton.addEventListener('click', toggleMobileMenu);
-
-                // Close menu when a link is clicked
-                mobileMenuLinks.forEach(link => {
-                    link.addEventListener('click', toggleMobileMenu);
-                });
-
-                // Close menu when clicking on the overlay background
-                mobileMenu.addEventListener('click', (event) => {
-                    if (event.target === mobileMenu) {
-                        toggleMobileMenu();
-                    }
-                });
-
-                // Close menu on escape key press for accessibility
+                mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', toggleMobileMenu));
+                mobileMenu.addEventListener('click', (event) => { if (event.target === mobileMenu) toggleMobileMenu(); });
                 window.addEventListener('keydown', (e) => {
                     const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
-                    if (e.key === 'Escape' && isMenuOpen) {
-                        toggleMobileMenu();
-                    }
+                    if (e.key === 'Escape' && isMenuOpen) toggleMobileMenu();
                 });
             }
+
+            // --- Timeline Data ---
+            const timelineData = [
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/01_bzamzt.jpg', text: "Starting from the beginning..<br><br>Growing up in an immigrant household is one of the best things that's ever happened to me. I learned that nothing is given and everything is earned; this mindset has been the foundation of my entire life." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753750/02_upnhxi.png', text: "Anytime I wasn't at school or in sports, I was at my family's window and door business, absorbing the realities of entrepreneurship." },
+                { type: 'video', url: 'https://res.cloudinary.com/dq7glunwv/video/upload/v1755753772/03_fgtdsu.mov', text: "My first \"sales training\" was at age 6, demonstrating products at trade shows. I learned early on how to connect with people and communicate value.<br><br>(The video to the right was taken when I was ~14)" },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753754/04_ykzou9.png', text: "By 10, I was a key team member. Because my English was more advanced than my parents', I was trusted to write client emails for deals worth over six figures.<br><br>(This pic was taken when I was ~16)" },
+                { type: 'multi-image', urls: ['https://res.cloudinary.com/dq7glunwv/image/upload/v1755753754/05_dadnjx.png', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753751/06_jp574r.png'], text: "When needed, I also worked in our factory and at client job sites, learning the value of hard work. On a number of occasions, I worked through the night to meet important deadlines.<br><br>So, yes, I am most definitely ready to work 7am-7pm on workshop weekends and whenever needed!" },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/07_ns2gkx.png', text: "By the time I was 18, I'd spent more than 1,000 hours helping my parents (and thus also learning business)." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753758/08_iig0jx.png', text: "Beyond my upbringing, the most developmentally impactful thing I've done is martial arts." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753757/09_t7x0bb.png', text: "I started when I was 5.. <br><br>..and by the time was a teenager, I had won many local, state, national, and international championships.. and also earned my jr. black belt." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753755/10_h8fav0.png', text: "Spending my formative years in such a highly competitive environment helped me:<br><br>1) develop my discipline even more +<br>2) develop an incredible ability to focus." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/11_zwgise.jpg', text: "As high school rolled around, I funneled my athleticism and determination into my favorite sport: basketball.<br><br>But, I'd never played organized basketball and for the first time in my life, I felt thoroughly out of place." },
+                { type: 'video', url: 'https://res.cloudinary.com/dq7glunwv/video/upload/v1755753778/12_mbg2fx.mov', text: "So I did what I learned through many years of working in my parents' business: work harder. I'd be the first one in, last one out of the gym. I worked harder than anyone else I knew.<br><br>(And yes, that's sweat dripping off of my shorts. Excuse the unprofessional-ness of the video; but I figured it helps demonstrate my insane work ethic and desire to learn and be great.)" },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753752/13_exbvqy.jpg', text: "By my 3rd year, I had progressed enough to start thinking about playing in college.<br><br>But I had virtually no shot at going pro so I turned my full attention to academics." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753747/14_dwn0ln.jpg', text: "Luckily, despite doing competitive sports 7 days/week, spending ~30 hours/week in the gym.. I had developed strong productivity habits and had trained my brain to be very efficient." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753761/15_nkeig4.jpg', text: "So I was able to earn a 4.4 GPA in high school." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753749/16_qkagns.png', text: "And was offered full academic scholarships to college." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753748/17_gbsacx.png', text: "I chose to study accounting + computer science at USC." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753763/18_xgxlsc.png', text: "I wanted to learn accounting b/c I'd heard it's the \"language of business\" and I knew that entrepreneurship was in my future so it made sense. And I added computer science because 1) I love challenging myself and 2) technology is the future so I figured I'd stay ahead of the game." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754571/19_plft1i.jpg', text: "Drinking and partying never appealed to me so, instead, I invested all of my Energy into academics and leadership positions.<br><br>I took 21 units a semester and graduated a year early, in 3 years, with a 3.9 GPA." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754571/20_ehy9jb.jpg', text: "After graduating from undergrad, I walked away from opportunities at McKinsey, Boston Consulting Group, PriceWaterhouseCoopers, etc. to go to law school at USC Gould." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753756/21_kafnnk.png', text: "Because of what happened when I was 18: Our family business was wrongfully sued for $9,999. I saw firsthand how the \"rules of the game\" could be used against honest, hardworking people." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754546/22_ulqear.jpg', text: "I decided I had to learn the rules. I enrolled in a college law class, studied contract law, wrote our defense briefs myself, and successfully defended our business in court (as an 18 year old).<br><br>This experience was the catalyst for law school. While my passion was always business, I knew that mastering the art of argumentation, structured thinking, and persuasive writing would be an invaluable asset." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755754547/23_mdyx3d.jpg', text: "Law school honed my ability to create high-stakes deliverables. It trained me to synthesize massive amounts of complex information into clear, logical, and compelling memos-a core function of the Strategy Associate role." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753766/24_bc6jjn.jpg', text: "Before I enrolled in law school, I considered going to business school. So, naturally, I studied for the GMAT (and ultimately scored a 740).<br><br>Through the exam prep, I developed an ability to perform quick, accurate numerical analysis required in fast-paced strategic discussions - super excited to use these skills at ACQ!" },
+                { type: 'multi-image', urls: ['https://res.cloudinary.com/dq7glunwv/image/upload/v1755753765/25_rqqdl3.jpg', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753771/26_fjqilv.jpg', 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753762/27_veucqj.jpg'], text: "I actively pursued leadership opportunities in every phase of my life, consistently securing leadership roles. As President of one organization, I identified new funding sources and grew our budget by 300%." },
+                { type: 'image', url: 'https://res.cloudinary.com/dq7glunwv/image/upload/v1755753764/28_mxz4yv.jpg', text: "I really do believe that I've been preparing for this role for many years now, without even knowing it, and I am beyond excited to take all of my varied life experiences and learnings and apply them to my work as a Strategy Associate at ACQ to do really awesome work with you all." },
+            ];
+
+            const timelineContainer = document.getElementById('timeline-items');
+            timelineData.forEach((item, index) => {
+                const isReversed = index % 2 !== 0;
+                const alignmentClass = isReversed ? 'md:flex-row-reverse' : '';
+
+                let mediaHTML = '';
+                if (item.type === 'image') {
+                    mediaHTML = `<img src="${item.url}" class="w-full h-full object-cover rounded-lg" alt="Timeline image ${index + 1}">`;
+                } else if (item.type === 'video') {
+                    mediaHTML = `<video src="${item.url}" class="w-full h-full object-cover rounded-lg" autoplay loop muted playsinline></video>`;
+                } else if (item.type === 'multi-image') {
+                    const imageGridClass = item.urls.length === 2 ? 'grid-cols-2' : 'grid-cols-3';
+                    mediaHTML = `<div class="grid ${imageGridClass} gap-2">${item.urls.map(url => `<img src="${url}" class="w-full h-full object-cover rounded-lg" alt="Timeline image ${index + 1}">`).join('')}</div>`;
+                }
+
+                const timelineItem = `
+                    <div class="relative fade-in">
+                        <div class="md:flex items-center ${alignmentClass}">
+                            <div class="md:w-1/2 ${isReversed ? 'md:pl-8' : 'md:pr-8'}">
+                                <div class="p-6 bg-slate-50 border border-slate-200 rounded-xl shadow-md">
+                                    <p class="text-slate-600 text-lg leading-relaxed">${item.text}</p>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 mt-4 md:mt-0">
+                                <div class="p-2 bg-white rounded-xl shadow-lg">${mediaHTML}</div>
+                            </div>
+                        </div>
+                        <div class="absolute left-4 md:left-1/2 top-1/2 -translate-y-1/2 -ml-2 h-4 w-4 rounded-full bg-sky-500 ring-8 ring-white"></div>
+                    </div>
+                `;
+                timelineContainer.innerHTML += timelineItem;
+            });
+
+            // --- Fade-in on Scroll Animation ---
+            const faders = document.querySelectorAll('.fade-in');
+            const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+            const appearOnScroll = new IntersectionObserver((entries, appearOnScroll) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        appearOnScroll.unobserve(entry.target);
+                    }
+                });
+            }, appearOptions);
+            faders.forEach(fader => appearOnScroll.observe(fader));
         });
     </script>
 </body>
