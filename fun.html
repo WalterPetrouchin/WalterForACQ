@@ -30,94 +30,85 @@
             transition: opacity 0.3s ease-in-out;
         }
         
-        /* --- MOBILE-FIRST MOSAIC STYLES --- */
-        .mosaic-container {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        .photo-card {
-            position: relative;
-            width: 100%;
-            height: 300px;
-            overflow: hidden;
+        /* --- MOBILE STYLES --- */
+        .mobile-photo-card {
+            background-color: white;
             border-radius: 0.75rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            border: 4px solid white;
-            cursor: pointer;
+            overflow: hidden;
+            border: 1px solid #e2e8f0; /* slate-200 */
         }
-        .photo-card:hover {
-            transform: scale(1.03);
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        .mobile-photo-media {
+            height: 300px;
+            width: 100%;
         }
-        .photo-card img, .photo-card video {
+        .mobile-photo-media img, .mobile-photo-media iframe {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
-        .photo-description {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
-            color: white;
-            padding: 2rem 1rem 1rem;
-            opacity: 1;
-            transform: translateY(0);
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        .mobile-photo-description {
+            padding: 1rem;
+            color: #475569; /* slate-600 */
+            text-align: left;
         }
-        .play-icon {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 64px;
-            height: 64px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: opacity 0.3s ease;
-        }
-        .play-icon.hidden {
-            opacity: 0;
+        .mobile-photo-description h3 {
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: #1e293b; /* slate-800 */
+            margin-bottom: 0.5rem;
         }
 
-        /* --- DESKTOP OVERRIDES --- */
+        /* --- DESKTOP STYLES --- */
         @media (min-width: 769px) {
-            .mosaic-container {
+            .desktop-mosaic-container {
                 position: relative;
-                display: block;
                 width: 100%;
                 height: 80vh;
                 min-height: 700px;
             }
-            .photo-card {
+            .desktop-photo-card {
                 position: absolute;
                 height: auto;
+                cursor: pointer;
+                overflow: hidden;
+                border-radius: 0.75rem;
+                box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+                transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+                border: 4px solid white;
             }
-            #photo-1 { top: 0%; left: 10%; width: 30%; height: 45%; transform: rotate(-3deg); }
-            #photo-2 { top: 50%; left: 5%; width: 40%; height: 45%; transform: rotate(2deg); }
-            #photo-3 { top: 15%; left: 45%; width: 25%; height: 60%; transform: rotate(4deg); }
-            #photo-4 { top: 5%; left: 75%; width: 20%; height: 30%; transform: rotate(-5deg); }
-            #photo-5 { top: 40%; left: 72%; width: 28%; height: 50%; transform: rotate(8deg); }
-            
-            .photo-card:hover {
+            .desktop-photo-card:hover {
                 transform: scale(1.1) rotate(0deg) !important;
                 box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
                 z-index: 10;
             }
-            .photo-description {
+            .desktop-photo-card img, .desktop-photo-card iframe {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .desktop-photo-description {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+                color: white;
+                padding: 2rem 1rem 1rem;
                 opacity: 0;
                 transform: translateY(20px);
+                transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                pointer-events: none; /* Allows clicks to pass through to the iframe */
             }
-            .photo-card:hover .photo-description {
+            .desktop-photo-card:hover .desktop-photo-description {
                 opacity: 1;
                 transform: translateY(0);
             }
+            #photo-1 { top: 5%; left: 5%; width: 28%; height: 40%; transform: rotate(-4deg); }
+            #photo-2 { top: 52%; left: 50%; width: 40%; height: 40%; transform: rotate(-2deg); }
+            #photo-3 { top: 10%; left: 38%; width: 30%; height: 55%; transform: rotate(1deg); }
+            #photo-4 { top: 0%; left: 72%; width: 25%; height: 48%; transform: rotate(5deg); }
+            #photo-5 { top: 50%; left: 10%; width: 35%; height: 45%; transform: rotate(3deg); }
         }
     </style>
 </head>
@@ -172,54 +163,25 @@
         <!-- Photo Collage Section -->
         <section id="photo-collage" class="container mx-auto px-6 pt-24 pb-16">
             <div class="max-w-6xl mx-auto">
-                <div class="mosaic-container">
-                    <!-- Image 1 -->
-                    <div id="photo-1" class="photo-card">
-                        <img src="https://drive.google.com/uc?export=view&id=1xQcjzsyqbs1VPtwf3YWE8lPv1Yan_DSc" alt="Walter playing basketball">
-                        <div class="photo-description">
-                            <h3 class="font-bold text-lg">Competitive Drive</h3>
-                            <p class="text-sm">Applying the same focus and competitive drive from the basketball court to every business challenge.</p>
-                        </div>
-                    </div>
-                    <!-- Image 2 -->
-                    <div id="photo-2" class="photo-card">
-                        <img src="https://drive.google.com/uc?export=view&id=13kR44L5pH0IuEQ1TAGn-_4VQzr_H4Ol9" alt="Walter traveling">
-                        <div class="photo-description">
-                            <h3 class="font-bold text-lg">Exploring New Perspectives</h3>
-                            <p class="text-sm">Travel has taught me to adapt quickly and appreciate different ways of thinking—a crucial skill in strategy.</p>
-                        </div>
-                    </div>
-                    <!-- Video 3 -->
-                    <div id="photo-3" class="photo-card">
-                        <video id="reading-video" class="w-full h-full object-cover" loop preload="metadata">
-                            <source src="https://drive.google.com/uc?export=view&id=18f5QKGQq3XqKlEab9xr6yBBaiF8NqrYe" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <div id="play-icon-container" class="play-icon">
-                            <svg class="w-8 h-8 text-slate-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
-                        </div>
-                        <div class="photo-description">
-                            <h3 class="font-bold text-lg">Continuous Learning</h3>
-                            <p class="text-sm">My passion for reading and self-improvement is relentless. I believe the best investment is always in your own knowledge.</p>
-                        </div>
-                    </div>
-                    <!-- Image 4 -->
-                    <div id="photo-4" class="photo-card">
-                        <img src="https://drive.google.com/uc?export=view&id=1mLKEeJ2BTMx2mGaWvOvFDHyMPY1NiGJk" alt="Walter outdoors">
-                        <div class="photo-description">
-                            <h3 class="font-bold text-lg">Embracing Challenges</h3>
-                            <p class="text-sm">Whether it's a mountain or a market analysis, I thrive on pushing my limits and tackling difficult challenges head-on.</p>
-                        </div>
-                    </div>
-                    <!-- Image 5 -->
-                    <div id="photo-5" class="photo-card">
-                        <img src="https://drive.google.com/uc?export=view&id=15JXvb87jtDIin3KESneeuJeqM_i-aTs_" alt="Walter doing yoga">
-                        <div class="photo-description">
-                            <h3 class="font-bold text-lg">Discipline & Focus</h3>
-                            <p class="text-sm">Practices like yoga and martial arts have honed my discipline and ability to maintain focus under pressure.</p>
-                        </div>
-                    </div>
+
+                <!-- DESKTOP MOSAIC - Hidden on mobile -->
+                <div class="hidden md:block desktop-mosaic-container">
+                    <div id="photo-1" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Tomatoes.jpg" alt="Walter holding homegrown tomatoes"><div class="desktop-photo-description"><h3>Homegrown Veggies 😋</h3><p class="text-sm">I love growing my own veggies in my small backyard! Eating them makes me smile every time :)</p></div></div>
+                    <div id="photo-2" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Splits_cpj4zy.jpg" alt="Walter doing the splits"><div class="desktop-photo-description"><h3>Daily Discipline</h3><p class="text-sm">A daily yoga practice is a non-negotiable in my world: 1) it helps me feel my best and 2) I believe there’s great virtue in sustaining not-necessarily-easy habits over a long time horizon because doing so build discipline that transfers into every area of life.</p></div></div>
+                    <div id="photo-3" class="desktop-photo-card"><iframe src="https://www.youtube.com/embed/CIGGDSdhWZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><div class="desktop-photo-description"><h3>Day 10 of Learning Piano!</h3><p class="text-sm">I started learning to play the piano and sing about two weeks ago. This video that I shared with y’all is 1) most definitely nowhere near perfect, but 2) my 10th day of playing/singing and one that I enjoyed. I don’t do many things ‘just for fun’ but I really want to learn!</p></div></div>
+                    <div id="photo-4" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Take_the_staris_gjwa6g.png" alt="Walter with a stack of books"><div class="desktop-photo-description"><h3>Self-Improvement Addict</h3><p class="text-sm">I love reading! I read my first self-improvement book (Rich Dad Poor Dad) in fifth grade and haven’t looked back!</p></div></div>
+                    <div id="photo-5" class="desktop-photo-card"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Basketball_zhgpwn.jpg" alt="Walter playing basketball"><div class="desktop-photo-description"><h3>Basketball 🫶</h3><p class="text-sm">Basketball is one of my favorite sports - I lose track of time and have an absolute blast every time I lace up :)</p></div></div>
                 </div>
+
+                <!-- MOBILE STACK - Hidden on desktop -->
+                <div class="md:hidden mobile-mosaic-container">
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Tomatoes.jpg" alt="Walter holding homegrown tomatoes"></div><div class="mobile-photo-description"><h3>Homegrown Veggies 😋</h3><p>I love growing my own veggies in my small backyard! Eating them makes me smile every time :)</p></div></div>
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Splits_cpj4zy.jpg" alt="Walter doing the splits"></div><div class="mobile-photo-description"><h3>Daily Discipline</h3><p>A daily yoga practice is a non-negotiable in my world: 1) it helps me feel my best and 2) I believe there’s great virtue in sustaining not-necessarily-easy habits over a long time horizon because doing so build discipline that transfers into every area of life.</p></div></div>
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><iframe src="https://www.youtube.com/embed/CIGGDSdhWZQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><div class="mobile-photo-description"><h3>Learning Piano!</h3><p>I started learning to play the piano and sing about two weeks ago. This video that I shared with y’all is 1) most definitely nowhere near perfect, but 2) my 10th day of playing/singing and one that I enjoyed. I don’t do many things ‘just for fun’ but I really want to learn!</p></div></div>
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Take_the_staris_gjwa6g.png" alt="Walter with a stack of books"></div><div class="mobile-photo-description"><h3>Self-Improvement Addict</h3><p>I love reading! I read my first self-improvement book (Rich Dad Poor Dad) in fifth grade and haven’t looked back!</p></div></div>
+                    <div class="mobile-photo-card"><div class="mobile-photo-media"><img src="https://res.cloudinary.com/dq7glunwv/image/upload/Basketball_zhgpwn.jpg" alt="Walter playing basketball"></div><div class="mobile-photo-description"><h3>Basketball 🫶</h3><p>Basketball is one of my favorite sports - I lose track of time and have an absolute blast every time I lace up :)</p></div></div>
+                </div>
+
             </div>
         </section>
 
@@ -252,23 +214,6 @@
                 window.addEventListener('keydown', (e) => {
                     const isMenuOpen = !mobileMenu.classList.contains('pointer-events-none');
                     if (e.key === 'Escape' && isMenuOpen) toggleMobileMenu();
-                });
-            }
-
-            // --- Video Player Logic ---
-            const videoCard = document.getElementById('photo-3');
-            const video = document.getElementById('reading-video');
-            const playIcon = document.getElementById('play-icon-container');
-
-            if(videoCard && video && playIcon) {
-                videoCard.addEventListener('click', () => {
-                    if (video.paused) {
-                        video.play();
-                        playIcon.classList.add('hidden');
-                    } else {
-                        video.pause();
-                        playIcon.classList.remove('hidden');
-                    }
                 });
             }
         });
