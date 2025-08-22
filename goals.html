@@ -17,6 +17,11 @@
             background-color: #f8fafc; /* slate-50 */
             color: #0f172a; /* slate-900 */
         }
+        .section-compact {
+            min-height: auto;
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
         .glass-effect {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -76,7 +81,7 @@
     </div>
 
 
-    <main class="pt-32 pb-16">
+    <main class="pt-32">
         <section id="intro" class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
                 <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">My Goals & Aspirations</h1>
@@ -143,7 +148,7 @@
             </div>
         </section>
 
-        <section id="next-page" class="bg-white border-t border-slate-200 py-16">
+        <section id="next-page" class="section-compact bg-white border-t border-slate-200">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-2xl font-bold text-slate-800">Curious about who I am beyond the work?</h2>
                 <p class="mt-2 text-slate-600">The next page offers a glimpse into my life and passions.</p>
@@ -159,6 +164,19 @@
         </section>
 
     </main>
+    
+    <!-- Footer -->
+    <footer class="bg-slate-100 border-t border-slate-200">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-500">
+            <p class="font-semibold text-slate-700">Walter Petrouchin</p>
+            <p class="text-sm">
+                <a href="mailto:walter.petr@yahoo.com" class="hover:text-sky-500 transition-colors">walter.petr@yahoo.com</a> | (310) 874-4247
+            </p>
+            <p class="text-sm mt-1">
+                <a href="https://www.linkedin.com/in/walterpetrouchin/" target="_blank" rel="noopener noreferrer" class="text-sky-500 hover:underline">LinkedIn Profile</a>
+            </p>
+        </div>
+    </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
