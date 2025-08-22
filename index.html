@@ -91,7 +91,7 @@
             
             <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
-                <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
+                <a href="/" class="text-sky-500 font-semibold transition-colors">Home</a>
                 <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
                 <a href="/deliverables.html" class="hover:text-sky-500 transition-colors">Deliverable Examples</a>
                 <a href="/fit.html" class="hover:text-sky-500 transition-colors">Culture Fit</a>
@@ -114,7 +114,7 @@
 
     <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
-        <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
+        <a href="/" class="text-2xl font-semibold text-sky-500">Home</a>
         <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
         <a href="/deliverables.html" class="text-2xl font-semibold text-slate-800">Deliverables</a>
         <a href="/fit.html" class="text-2xl font-semibold text-slate-800">Culture Fit</a>
@@ -180,20 +180,43 @@
             <div class="text-center mb-12">
                 <h2 class="text-sm font-bold uppercase tracking-widest text-sky-500">My Approach</h2>
                 <p class="mt-3 text-3xl md:text-4xl font-bold text-slate-900">My First Deliverable To You</p>
-                <p class="mt-4 max-w-2xl mx-auto text-slate-600">This site is a live demonstration of the clarity, quality, and initiative I bring to my work. I know you have a memo-writing culture so I wrote you one!</p>
+                <p class="mt-4 max-w-2xl mx-auto text-slate-600">This site is a live demonstration of the clarity, quality, and initiative I bring to my work. I know you have a memo-writing culture, so I wrote you one.</p>
             </div>
             <div class="max-w-4xl mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl shadow-slate-900/10 border border-slate-200">
                 <div class="memo-grid items-center mb-6 text-sm md:text-base">
-                    <p class="memo-label">TO:</p><p class="text-slate-800">Acquisition.com Recruiting Team</p>
+                    <p class="memo-label">TO:</p><p class="text-slate-800">Acquisition.com Recruiting Team & Leadership</p>
                     <p class="memo-label">FROM:</p><p class="text-slate-800">Walter Petrouchin</p>
-                    <p class="memo-label">DATE:</p><p class="text-slate-800">August 19, 2025</p>
-                    <p class="memo-label">SUBJECT:</p><p class="font-semibold text-slate-900">Advisory Group Strategy Associate Application</p>
+                    <p class="memo-label">DATE:</p><p id="memo-date" class="text-slate-800"></p>
+                    <p class="memo-label">SUBJECT:</p><p class="font-semibold text-slate-900">Application for Strategy Associate Role</p>
                 </div>
                 <hr class="border-slate-200 my-8">
-                <div class="prose prose-slate max-w-none text-slate-600">
-                    <p>This website serves as a live demonstration of my work ethic, commitment to excellence, and a tangible first deliverable.</p>
-                    <p class="mt-4">Rather than simply describing my skills, I believe in showing them. My objective is to provide a clear, concise, and high-value executive summary of the strategic perspective I would bring to Acquisition.com. This is my application in action.</p>
+                <div class="prose prose-slate max-w-none text-slate-600 space-y-4">
+                    <p><strong>Why:</strong> To truly demonstrate my fit for the high-stakes Strategy Associate role, a standard resume is insufficient. A company that values competitive greatness deserves an application that embodies it. This website is my solution.</p>
+                    <p><strong>What:</strong> The challenge is to convey the depth of my alignment with your core values—Competitive Greatness, Sincere Candor, and Unimpeachable Character—and to prove my readiness to contribute from day one. A flat document cannot adequately showcase the drive, work ethic, and strategic thinking I've cultivated through years of unconventional, intentional experiences.</p>
+                    <p><strong>How:</strong> This website serves as a comprehensive, multi-part deliverable designed for clarity and efficiency. It is my application in action. Here, you can find:<br>
+                        •   My full story and background.<br>
+                        •   A detailed breakdown of my alignment with your culture.<br>
+                        •   A proactive 30-60-90 day plan to create immediate value.<br>
+                        •   A glimpse into who I am beyond my work.</p>
+                    <p><strong>Now:</strong> I invite you to explore the pages of this site. Each section is a testament to the quality and initiative I bring. The next step is to schedule a conversation, where we can discuss how my unique blend of skills and my deep resonance with your mission can be an immediate asset to your team.</p>
+                    <p class="pt-4">Thank you for the opportunity to apply and for your time and consideration.</p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Next Page -->
+    <section id="next-page" class="section-compact bg-white border-t border-slate-200">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-slate-800">Ready for the Full Story?</h2>
+            <p class="mt-2 text-slate-600">The next page details my background, experiences, and what drives me.</p>
+            <div class="mt-8">
+                <a href="/resume.html" class="inline-flex items-center justify-center gap-x-3 bg-sky-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-sky-600 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    View My Resume & Story
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </a>
             </div>
         </div>
     </section>
@@ -202,6 +225,16 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
+            // --- Set Memo Date ---
+            const memoDate = document.getElementById('memo-date');
+            if(memoDate) {
+                memoDate.textContent = new Date().toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric'
+                });
+            }
+
             // --- Header Scroll Effect ---
             const header = document.getElementById('main-header');
             if (header) {
