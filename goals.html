@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Goals | Walter Petrouchin</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS for styling and animations -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -42,12 +39,10 @@
 </head>
 <body class="antialiased">
 
-    <!-- Navigation Header -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
             
-            <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
                 <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
                 <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
@@ -59,7 +54,6 @@
                 <a href="/thankyou.html" class="hover:text-sky-500 transition-colors">Thank You</a>
             </nav>
 
-            <!-- Mobile Menu Button -->
             <div class="lg:hidden">
                 <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -70,7 +64,6 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
         <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
         <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
@@ -83,7 +76,6 @@
     </div>
 
 
-    <!-- Main Content Section -->
     <main class="pt-32 pb-16">
         <section id="intro" class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
@@ -94,7 +86,6 @@
             </div>
         </section>
         
-        <!-- Short-Term Goals Section -->
         <section id="short-term-goals" class="container mx-auto px-6 pt-24 pb-16">
             <div class="max-w-4xl mx-auto">
                 <div class="text-center mb-16">
@@ -102,7 +93,6 @@
                     <p class="mt-4 max-w-2xl mx-auto text-slate-600">Assuming I earn the role, here is how I plan to approach my first three months to create immediate value.</p>
                 </div>
                 <div class="grid grid-cols-1 gap-8 text-left">
-                    <!-- 30 Days -->
                     <div class="goal-card bg-white p-8 rounded-xl shadow-lg border border-slate-200">
                         <div class="text-sky-500 font-bold text-lg text-center">First 30 Days</div>
                         <h3 class="text-2xl font-semibold mt-2 text-slate-800 text-center">Deep Immersion & Immediate Contribution</h3>
@@ -114,7 +104,6 @@
                             <li><strong>Support Data Analysis:</strong> Join client discovery calls to listen and synthesize key problems, and assist in gathering and analyzing data to support the team's strategic insights.</li>
                         </ul>
                     </div>
-                    <!-- 60 Days -->
                     <div class="goal-card bg-white p-8 rounded-xl shadow-lg border border-slate-200">
                         <div class="text-sky-500 font-bold text-lg text-center">First 60 Days</div>
                         <h3 class="text-2xl font-semibold mt-2 text-slate-800 text-center">Expanding Impact & Taking Ownership</h3>
@@ -125,7 +114,6 @@
                              <li><strong>Master Core Frameworks:</strong> Demonstrate a strong working knowledge of Acquisition.com's primary consulting frameworks by actively applying them in client work and internal discussions.</li>
                         </ul>
                     </div>
-                    <!-- 90 Days -->
                     <div class="goal-card bg-white p-8 rounded-xl shadow-lg border border-slate-200">
                         <div class="text-sky-500 font-bold text-lg text-center">First 90 Days</div>
                         <h3 class="text-2xl font-semibold mt-2 text-slate-800 text-center">Driving Results & Autonomous Operation</h3>
@@ -140,7 +128,6 @@
             </div>
         </section>
 
-        <!-- Long-Term Goals Section -->
         <section id="long-term-goals" class="bg-white border-y border-slate-200">
             <div class="container mx-auto px-6 py-24">
                 <div class="max-w-3xl mx-auto text-center">
@@ -156,9 +143,23 @@
             </div>
         </section>
 
+        <section id="next-page" class="bg-white border-t border-slate-200 py-16">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-2xl font-bold text-slate-800">Curious about who I am beyond the work?</h2>
+                <p class="mt-2 text-slate-600">The next page offers a glimpse into my life and passions.</p>
+                <div class="mt-8">
+                    <a href="/fun.html" class="inline-flex items-center justify-center gap-x-3 bg-sky-500 text-white font-semibold py-3 px-8 rounded-lg hover:bg-sky-600 transition-colors text-lg shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                        See My Fun Side :)
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <!-- JavaScript for interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
