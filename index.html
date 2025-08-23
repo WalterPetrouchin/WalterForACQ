@@ -39,14 +39,25 @@
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 0, 0, 0.05);
         }
+        /* Updated highlight-text class for dynamic gradient */
         .highlight-text {
-            background: -webkit-linear-gradient(45deg, #0ea5e9, #8b5cf6); /* sky-500 to violet-500 */
+            background: linear-gradient(120deg, #0ea5e9, #8b5cf6, #ec4899, #0ea5e9);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: gradient-move 8s ease-in-out infinite;
         }
         .scroll-indicator {
             animation: bounce 2s infinite;
         }
+
+        /* Keyframes for the gradient animation */
+        @keyframes gradient-move {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% {
                 transform: translateY(0);
