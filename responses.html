@@ -5,15 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Application Responses | Walter Petrouchin</title>
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Custom CSS for styling and animations -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -64,12 +61,10 @@
 </head>
 <body class="antialiased">
 
-    <!-- Navigation Header -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 glass-effect shadow-lg">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="/" class="text-xl font-bold tracking-wider text-slate-800">WALTER PETROUCHIN</a>
             
-            <!-- Desktop Navigation -->
             <nav class="hidden lg:flex items-center space-x-6 text-sm font-medium text-slate-600">
                 <a href="/" class="hover:text-sky-500 transition-colors">Home</a>
                 <a href="/resume.html" class="hover:text-sky-500 transition-colors">Resume</a>
@@ -81,7 +76,6 @@
                 <a href="/thankyou.html" class="hover:text-sky-500 transition-colors">Thank You</a>
             </nav>
 
-            <!-- Mobile Menu Button -->
             <div class="lg:hidden">
                 <button id="mobile-menu-button" class="text-slate-800 focus:outline-none z-50">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +86,6 @@
         </div>
     </header>
 
-    <!-- Mobile Menu Overlay -->
     <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-lg flex flex-col items-center justify-center space-y-6 opacity-0 pointer-events-none lg:hidden">
         <a href="/" class="text-2xl font-semibold text-slate-800">Home</a>
         <a href="/resume.html" class="text-2xl font-semibold text-slate-800">Resume</a>
@@ -105,7 +98,6 @@
     </div>
 
 
-    <!-- Main Content Section -->
     <main class="pt-32">
         <section id="intro" class="container mx-auto px-6 text-center">
             <div class="max-w-3xl mx-auto">
@@ -120,10 +112,8 @@
             </div>
         </section>
         
-        <!-- Accordion Section -->
         <section id="accordion-section" class="container mx-auto px-6 pt-24 pb-16">
             <div class="max-w-3xl mx-auto">
-                <!-- Group 1: Basic Information -->
                 <h2 class="text-2xl font-bold text-slate-800 mb-6">Basic & Logistical Information</h2>
                 <div class="space-y-4 mb-12">
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Full Name</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Walter Petrouchin</p></div></div></div>
@@ -136,16 +126,15 @@
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">How did you hear about this opportunity?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>I found it directly on the Acquisition.com Careers page.</p></div></div></div>
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you authorized to work in the U.S.?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Yes, I am a U.S. citizen.</p></div></div></div>
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Will you require sponsorship for employment?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>No, I will not.</p></div></div></div>
-                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you open to relocating to Las Vegas?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Absolutely. I am excited about the prospect of joining the team in person.</p></div></div></div>
-                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">If offered, how soon could you start?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>I can start immediately. I have already identified furnished housing options and am prepared to move as soon as needed.</p></div></div></div>
-                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Would full focus and commitment pose any issue?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Not at all. I am 110% committed to this role and have no other professional obligations that would dilute my focus. I am ready to give Acquisition.com my full professional dedication.</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you open to relocating to Las Vegas?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Absolutely. I am excited to join the team in person and am ready to relocate immediately.</p><br><p>I've already identified a fully furnished apartment and can be ready to start working the following week after receiving an offer.</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">If offered, how soon could you start?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>I can start immediately. I have already identified furnished housing options and am prepared to move as soon as needed. To give a concrete answer: I’m ready to start in person at ACQ the following week after receiving the offer.</p></div></div></div>
+                    <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Would full focus and commitment pose any issue?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Not at all. I am 110% committed to this role and have no other professional obligations that would dilute my focus. I am ready to give Acquisition.com my full professional dedication - I am confident that by doing so, I will achieve all of my professional goals. Win-win!</p></div></div></div>
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Any vacations planned in the next 3 months?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>No, I have no planned vacations and am ready to begin full-time.</p></div></div></div>
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">What is your target compensation?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>I would be grateful for a compensation package at the higher end of the range listed in the job description.</p><br><p>While this would represent a pay cut for me, I am incredibly excited about the learning and growth potential of the role and am eager to make that trade-off.</p></div></div></div>
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Can you commit to the intensive workshop schedule?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Absolutely. I am well-prepared for long hours and am excited to contribute to the success of the workshops.</p></div></div></div>
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you in other interview processes?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>No. I have only applied to Acquisition.com, as this is the only team I am truly passionate about joining. I am ready to start as soon as possible and would appreciate an efficient interview process.</p></div></div></div>
                 </div>
 
-                <!-- Group 2: Experience & Fit -->
                 <h2 class="text-2xl font-bold text-slate-800 mb-6 mt-12">Experience & Role Fit</h2>
                 <div class="space-y-4 mb-12">
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Have you worked cross-functionally?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Yes. Working in my family's business required constant cross-functional collaboration. As a small team, effective communication between Sales, Engineering, and Administration was essential to our success.</p></div></div></div>
@@ -154,7 +143,6 @@
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden"><button class="accordion-header w-full flex justify-between items-center text-left p-6"><span class="text-lg font-semibold text-slate-800">Are you comfortable with note-taking, slide clean-up, etc.?</span><div class="icon flex-shrink-0 ml-4 h-8 w-8 rounded-full bg-slate-100 flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-slate-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg></div></button><div class="accordion-content px-6"><div class="prose prose-slate max-w-none text-slate-600"><p>Absolutely. I've worn many hats in a small company, including a great deal of "boring work," and I am perfectly comfortable with it. I am excited to learn the processes, frameworks, and systems you use to help businesses from the ground up.</p></div></div></div>
                 </div>
 
-                <!-- Group 3: Situational Questions -->
                 <h2 class="text-2xl font-bold text-slate-800 mb-6 mt-12">Situational Questions</h2>
                 <div class="space-y-4">
                     <div class="accordion-item bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden">
@@ -205,7 +193,6 @@
             </div>
         </section>
 
-        <!-- Section: Next Page -->
         <section id="next-page" class="section-compact bg-white border-t border-slate-200">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-2xl font-bold text-slate-800">Ready to see my plan of action?</h2>
@@ -223,7 +210,6 @@
 
     </main>
 
-    <!-- Footer -->
     <footer class="bg-slate-100 border-t border-slate-200">
         <div class="container mx-auto px-6 py-8 text-center text-slate-500">
             <p class="font-semibold text-slate-700">Walter Petrouchin</p>
@@ -236,7 +222,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript for interactivity -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
