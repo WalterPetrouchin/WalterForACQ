@@ -91,9 +91,55 @@
         #mobile-menu {
             transition: opacity 0.3s ease-in-out;
         }
+
+        /* --- Desktop Experience Overlay Styles --- */
+        #desktop-overlay {
+            transition: opacity 0.5s ease-in-out;
+        }
+        #desktop-overlay-content {
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+            animation: fadeInContent 0.8s ease-out forwards;
+        }
+        @keyframes fadeInContent {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.98);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        .countdown-bar-inner {
+            animation: countdown 10s linear forwards;
+        }
+        @keyframes countdown {
+            from { width: 100%; }
+            to { width: 0%; }
+        }
     </style>
 </head>
 <body class="antialiased">
+
+    <!-- Desktop Experience Overlay -->
+    <div id="desktop-overlay" class="fixed inset-0 z-[100] bg-slate-900/80 backdrop-blur-lg flex items-center justify-center p-6 text-center hidden">
+        <div id="desktop-overlay-content" class="relative bg-white rounded-2xl shadow-2xl p-8 md:p-12 max-w-lg w-full">
+            <div class="flex justify-center items-center h-16 w-16 rounded-full bg-slate-100 mx-auto mb-6 ring-4 ring-slate-200">
+                <svg class="h-8 w-8 text-slate-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-1.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25A2.25 2.25 0 015.25 3h13.5A2.25 2.25 0 0121 5.25z" />
+                </svg>
+            </div>
+            <h2 class="text-2xl font-bold text-slate-800">Best experienced on desktop</h2>
+            <p class="text-slate-600 mt-3">For the ideal viewing experience, please visit this site on a desktop browser at:</p>
+            <div class="mt-4 bg-slate-100 text-sky-500 font-semibold py-3 px-4 rounded-lg text-lg">
+                walterforacq.com
+            </div>
+            <p id="countdown-text" class="text-xs text-slate-400 mt-6">Continuing to mobile in <span id="countdown-timer" class="font-semibold">10</span> seconds...</p>
+            <div class="absolute bottom-0 left-0 right-0 h-1.5 bg-slate-200 rounded-b-2xl overflow-hidden">
+                <div class="h-full bg-sky-500 countdown-bar-inner"></div>
+            </div>
+        </div>
+    </div>
 
     <!-- Navigation Header -->
     <header id="main-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
@@ -251,6 +297,48 @@
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             
+            // --- Desktop Experience Overlay Logic ---
+            const overlay = document.getElementById('desktop-overlay');
+            const countdownTimerEl = document.getElementById('countdown-timer');
+            const countdownTextEl = document.getElementById('countdown-text');
+            const DESKTOP_BREAKPOINT = 1024; // lg breakpoint in Tailwind
+
+            let countdownInterval;
+            let mainTimeout;
+
+            const hideOverlay = () => {
+                clearInterval(countdownInterval);
+                clearTimeout(mainTimeout);
+                overlay.style.opacity = '0';
+                setTimeout(() => {
+                    overlay.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 500); // Match CSS transition duration
+            };
+
+            if (window.innerWidth < DESKTOP_BREAKPOINT) {
+                overlay.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+
+                let secondsLeft = 10;
+                countdownTimerEl.textContent = secondsLeft;
+
+                countdownInterval = setInterval(() => {
+                    secondsLeft--;
+                    countdownTimerEl.textContent = secondsLeft;
+                    if (secondsLeft <= 0) {
+                        clearInterval(countdownInterval);
+                        countdownTextEl.textContent = "Continuing to mobile...";
+                    }
+                }, 1000);
+
+                mainTimeout = setTimeout(hideOverlay, 10000);
+
+                // Allow user to click to exit early
+                overlay.addEventListener('click', hideOverlay);
+            }
+
+
             // --- Set Memo Date ---
             const memoDate = document.getElementById('memo-date');
             if(memoDate) {
