@@ -172,14 +172,14 @@
                 </div>
                 <div class="max-w-4xl mx-auto">
                     <div class="aspect-video bg-slate-200 rounded-xl overflow-hidden shadow-2xl shadow-slate-900/10 border border-slate-200">
-                         <!-- In a real scenario, you would replace this with your actual video embed code from YouTube, Vimeo, or Loom -->
+                        <!-- The YouTube video embed code has been updated -->
                         <iframe 
-                            src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                            src="https://www.youtube.com/embed/Dco0GMCNGVo?rel=0" 
                             frameborder="0" 
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                             allowfullscreen
                             class="w-full h-full"
-                            title="Placeholder Video">
+                            title="Video Introduction for Acquisition.com">
                         </iframe>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
             // --- Set Memo Date ---
             const memoDate = document.getElementById('memo-date');
             if(memoDate) {
-                memoDate.textContent = new Date().toLocaleDateString('en-US', {
+                memoDate.textContent = new Date().toLocaleString('en-US', {
                     year: 'numeric',
                     month: 'long',
                     day: 'numeric'
