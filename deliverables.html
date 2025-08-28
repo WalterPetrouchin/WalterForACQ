@@ -377,7 +377,6 @@
                     icon: createIcon("M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"),
                     buttons: [
                         { text: "View Spreadsheet Sample", url: "https://docs.google.com/spreadsheets/d/1-Juz9s4la05DOeegntJjgvlCElcWG2lzGg8xXKbklSA/edit?usp=sharing" },
-                        { text: "Continue to Culture Fit →", url: "fit.html" }
                     ]
                 },
             ];
@@ -397,9 +396,8 @@
                         let buttonsHTML = '';
 
                         if (slide.buttons) {
-                            buttonsHTML = `<div class="mt-12 flex flex-col sm:flex-row gap-4">
+                            buttonsHTML = `<div class="mt-12 flex justify-center">
                                 <a href="${slide.buttons[0].url}" target="_blank" class="final-button final-button-primary">${slide.buttons[0].text}</a>
-                                <a href="${slide.buttons[1].url}" class="final-button">${slide.buttons[1].text}</a>
                             </div>`;
                         }
 
